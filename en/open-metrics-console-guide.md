@@ -1,138 +1,141 @@
-## Compute > System Monitoring > OpenMetrics Monitoring > 콘솔 사용 가이드
-콘솔 사용 가이드에서는 OpenMetrics Monitoring을 사용하는 데 필요한 내용을 설명합니다.
-**Compute > System Monitoring > OpenMetrics 대시보드**에서는 모니터링 작업 공간을 정의하고 수집 대상을 지정하여 Exporter 또는 그 형식을 따르는 임의의 지표를 수집할 수 있습니다.
-수집된 지표는 서버 대시보드와 유사한 방식으로 레이아웃과 차트를 구성하여 확인할 수 있습니다.
+## Compute > System Monitoring > OpenMetrics Monitoring > Console Guide
 
-## 작업 공간
+Console Guide describes what are required to use OpenMetrics Monitoring.
+In **Compute > System Monitoring > OpenMetrics Dashboard**, you can define monitoring workspace and specify the collection target to collect random metrics that complies with the Exporter or its format.
+Collected metrics can be checked by configuring a chart in a similar way as Server Dashboard.
 
-OpenMetrics 모니터링 기능을 사용하기 위해 가장 먼저 수행해야 하는 것은 작업 공간을 만드는 것입니다. 모니터링 목적과 성격이 같은 것을 하나의 작업 공간으로 정의하고, 수집 대상과 지표의 시각화 방법을 관리할 수 있습니다.
-따라서 최소한 한 개 이상의 작업 공간이 존재해야 OpenMetrics 모니터링을 사용할 수 있습니다.
+## Workspace
 
-### 작업 공간 생성
+The first thing you need to do to be able to use the OpenMetrics Monitoring function is to create your workspace. You can define those that share the same monitoring purpose and of the same nature as a single workspace, and monitor the visualization method of the collection target and metrics.
+Therefore, you need at least one workspace to be able to use the OpenMetrics Monitoring.
 
-대시보드 화면 왼쪽에는 작업 공간 목록이 표시됩니다. 목록의 최상단에는 작업 공간 검색을 위해 제공되는 입력란과 **작업 공간 추가** 대화 상자를 표시하기 위한 버튼이 있습니다.
+### Create Workspace
 
-**추가** 버튼을 클릭하면 **작업 공간 추가** 대화 상자가 나타납니다.
-작업 공간에 이름과 설명, URL Path를 입력하여 생성할 수 있습니다.
-이름에는 영문자, 숫자, `-`, `_`를 입력할 수 있습니다.
-URL Path에는 지표를 제공하는 페이지 주소 중, 도메인과 포트 등을 제외한 Path만 입력해야 합니다.
+To the left side of the dashboard screen, there is a workspace list. At the top of the list lies a text box for workspace search and a button that displays **Add Workspace** dialog.
 
-* Path 입력 예시
+Clicking the **Add** button brings up the **Add Workspace** dialog.
+You can create this by entering a name, a description, and an URL Path in Workspace.
+Name can contain alphanumeric characters, `-`, and `_`.
+In URL Path, nothing else (Domain, Port, etc.) but only Path needs to be entered from the page address that provides metrics.
 
-접속 대상 | 입력값
--------- | -------
-http://localhost:9100/metrics | `/metrics`
-http://localhost:8080/actuator/prometheus | `/actuator/prometheus`
+* Path Name Example
 
-### 작업 공간 수정/삭제
+| Login Target                              | Entry Value            |
+| ----------------------------------------- | ---------------------- |
+| http://localhost:9100/metrics             | `/metrics`             |
+| http://localhost:8080/actuator/prometheus | `/actuator/prometheus` |
 
-대시보드의 왼쪽에 표시되는 작업 공간 목록의 각 작업 공간 항목 오른쪽에 톱니바퀴 아이콘이 있습니다. 톱니바퀴 아이콘을 클릭하면 **작업 공간 관리** 대화 상자가 나타납니다.
+### Modify/Delete Workspace
 
-수정하려면 설명과 URL Path를 입력한 후 **수정** 버튼을 클릭합니다.
+There is a gear icon to the right of each workspace in the workspace list displayed on the left side of the dashboard. Clicking the gear icon brings up the **Manage Workspace** dialog.
 
-사용하지 않는 작업 공간을 삭제하려면 **삭제** 버튼을 클릭합니다.
-작업 공간을 삭제하면 생성된 수집 대상과 레이아웃, 차트 등도 모두 삭제됩니다. 단, 같은 이름의 작업 공간을 다시 만들면 기존에 수집된 지표 데이터는 조회할 수 있습니다.
+To modify this, enter a description and a URL Path and click the **modify** button.
 
-## 수집 대상
+To delete a workspace no longer used, click the **Delete** button.
+Deleting the workspace also deletes all of its content including collection targets, layouts, and charts. However, if you create a new workspace of the same name, you can view previously collected metrics data.
 
-작업 공간을 생성했다면 각 공간에서 모니터링할 대상을 지정해야 합니다. 대시보드 왼쪽의 작업 공간 목록에서 사용할 공간 하나를 선택하면, 화면 위에 **수집 대상 관리** 버튼이 표시됩니다.
-**수집 대상 관리** 버튼을 클릭하면 수집 대상을 추가 또는 삭제할 수 있는 대화 상자가 나타납니다.
+## Collection Target
 
-### 수집 대상 추가
+Once you created your workspace, now you have to specify the target to monitor. If you select a space from the workspace list to the left of the dashboard, the **Manage Collection Target** button appear at the top of the screen.
+Clicking the **Manage Collection Target** button brings up a dialog that lets you add or delete collection targets.
 
-**수집 대상 관리** 대화 상자 위에 모니터링 대상 추가에 필요한 입력란이 표시됩니다.
+### Add Collection Target
 
-**서버** 입력란을 클릭하면 현재 System Monitoring의 Agent가 정상적으로 동작하는 인스턴스들이 표시되며, 하나 이상을 선택하여 수집할 대상을 지정할 수 있습니다.
+Above the **Manage Collection Target** dialog, a text box needed for adding monitoring targets is displayed.
 
-**포트** 입력란에는 지표 정보를 제공하고 있는 Exporter 또는 웹 애플리케이션의 포트를 입력합니다.
+Clicking the **Server** text box displays instances on which the agent of the System Monitoring works properly, and you can specify the target to collect by selecting one or more of them.
 
-서버와 포트 모두 입력이 되면 **추가** 버튼을 클릭하여 대상을 추가할 수 있습니다.
-현재는 작업 공간 구분 없이 서버 당 최대 5개의 수집 대상만 등록이 가능합니다.
+In the **Port** text box, enter the port of the Exporter or web application that provides metrics data.
 
-### 수집 대상 조회
+Once Server and Port are typed in, click the **Add** button to add a target.
+Currently, you can register up to 5 collection targets per server regardless of the classification of workspaces.
 
-**수집 대상 관리** 대화 상자 아래에는 이 작업 공간 내에 등록된 수집 대상의 목록이 표시됩니다.
-상탯값은 색으로 구분됩니다. 정상 수집을 제외한 나머지는 원 위에 마우스를 올리면 상세 설명이 툴팁으로 표시됩니다.
-색상 | 의미
----- | ----
-녹색 | 정상 수집 중
-노란색 | HTTP 에러 응답(404 Not Found, 503 Service Unavailable 등)
-붉은색 | 수집 불가능 상태(해당 포트가 LISTEN이 아니거나 타임아웃 등)
-회색 | 수집 준비 중(수집 대상 등록 직후 또는 인스턴스가 중지된 상태)
+### View Collection Target
 
-> 시간이 지나도 회색 상태가 유지되면 Agent를 최신 버전으로 업데이트해 주시기 바랍니다.
-> ([Agent 설치 방법](https://docs.toast.com/ko/Compute/System%20Monitoring/ko/console-guide/#agent))
-> 업데이트 이후에도 여전히 변화가 없다면 고객센터로 문의하시길 바랍니다.
+Under the **Manage Collection Target** dialog, the list of the collection targets registered for this workspace is displayed.
+Status value is distinguished by color. For all collections except normal collection, a tooltip appears to provide more details when mouse is placed over any circle of those collections.
 
-### 수집 대상 삭제
+| Color  | Meaning                                                      |
+| ------ | ------------------------------------------------------------ |
+| Green  | Collecting normally                                          |
+| Yellow | HTTP error response (404 Not Found, 503 Service Unavailable) |
+| Red    | Collection disabled state (the port is not LISTEN or it is timed out) |
+| Grey   | Preparing collection (right after collection targets are registered or the instance is stopped) |
 
-**수집 대상 관리** 대화 상자의 목록 아래에 **삭제** 버튼이 있습니다. 목록 왼쪽 체크 박스에서 삭제할 대상을 선택한 후 **삭제** 버튼을 클릭하면 모니터링이 중단됩니다.
+> If the grey color does not change even after a while, please update the Agent with the latest version.
+> ([How to install the Agent](https://docs.toast.com/ko/Compute/System%20Monitoring/ko/console-guide/#agent))
+> If there is no change even after updating, please contact our Customer Center.
 
-## 레이아웃
+### Delete Collection Target
 
-작업 공간을 만들고 수집 대상을 지정하면 Agent는 지표를 수집하고 System Monitoring 시스템에 데이터를 저장합니다. 저장된 데이터를 조회하려면 레이아웃에서 차트를 구성해야 합니다. 레이아웃은 서버 대시보드에서 제공하는 것과 비슷한 기능이 있습니다.
+Below the list of the **Manage Collection Target** dialog, there is the **Delete** button. Select a target to delete in the checkbox left to the list and click **Delete** button to stop monitoring.
 
-### 레이아웃 생성
+## Layout
 
-대시보드에 차트를 만들고 배치하여 모니터링 정보를 시각화하고 싶다면 레이아웃을 만들어 목적과 관점에 따라 구성할 수 있습니다.
-레이아웃을 만들려면 대시보드 위의 **레이아웃 만들기** 버튼을 클릭합니다. 레이아웃은 작업 공간당 최대 5개까지 만들 수 있습니다.
+Once workspace is created and collection target is specified, the Agent collects metrics and saves data in the System Monitoring system. To view the saved data, you need to configure a chart in the Layout. The Layout has a function similar to that of the Server Dashboard.
 
-**레이아웃 만들기** 대화 상자에서 이름을 입력한 후 **생성** 버튼을 클릭하면 새로운 레이아웃이 생성됩니다. 등록된 차트가 없어 빈 화면이 나타납니다. 새로운 차트를 추가하려면 화면 안내에 따라 **차트 추가** 버튼을 클릭합니다.
+### Create Layout
 
-### 레이아웃 수정/삭제
+If you want to visualize monitoring information by creating and place a chart in the dashboard, you can create a layout and then configure it to fit your needs.
+To create a layout, click the **Create Layout** button above the dashboard. You can create up to 5 layouts per workspace.
 
-대시보드 위의 **관리** 버튼을 클릭하면 특정 레이아웃의 이름을 변경하거나 필요 없는 레이아웃을 삭제할 수 있습니다.
+Enter a name in the **Create Layout** dialog and click the **Create** button to generate a new layout. If there is no registered chart, a blank screen appears. To add a new chart, follow the on-screen instructions and click the **Add Chart** button.
 
-## 차트
+### Modify/Delete Layout
 
-OpenMetrics 모니터링의 대시보드에서는 시스템에서 제공하는 차트를 선택하는 서버 대시보드의 방식과는 달리 사용자가 차트로 표현하고 싶은 지표와 조건을 직접 지정하여 만들 수 있습니다.
+By clicking the **Manage** button above the dashboard, you can change the name of a specific layout or delete unnecessary layouts.
 
-### 차트 생성
+## Chart
 
-레이아웃에 새로운 차트를 생성하려면 대시보드 위의 **차트 추가** 버튼을 클릭합니다.
+Unlike the Server Dashboard that lets users select one of the charts provided by the system, OpenMetrics Monitoring dashboard allows users to directly specify the metrics and conditions that they want to show in their chart.
 
-**차트 추가** 대화 상자에서 차트 이름과 차트의 Y축 속성을 지정하고, 지표 등록과 알림을 설정할 수 있습니다. 지표와 알림을 설정하는 화면은 각각 탭으로 구분되어 있습니다.
-Y축은 왼쪽과 오른쪽을 각각 활성화할 수 있습니다. 축마다 표시될 수치의 단위를 지정할 수 있습니다.
-활성화된 Y축은 지표 추가 시 차트에 표시되는 격자의 기준으로 선택됩니다. 따라서 왼쪽과 오른쪽 둘 중 하나는 반드시 활성화되어야 합니다.
-지표는 여러 개를 추가할 수 있습니다. 단, 최소한 한 개의 지표는 반드시 추가해야 합니다. 알림은 필요할 때만 입력할 수 있습니다.
+### Create Chart
 
-#### 지표
+To create a chart in the layout, click the **Add Chart** button above the dashboard.
 
-지표를 추가하려면 **지표** 탭에서 **지표 추가** 버튼을 클릭합니다.
+In the **Add Chart** dialog, you can specify the chart name and Y-axis property of the chart, register metrics, and change the notification setting. The metrics and notification settings are placed under different tabs.
+The left and right Y-axes can be separately enabled. You can specify a different unit for the value to display for each axis.
+The enabled Y-axis is selected based on the grid displayed in the chart when metrics are added. Therefore, at least one of the two (left and right) must be enabled.
+You can add multiple metrics. However, you need to add at least one metric. You can enter notification only when it is necessary.
 
-**지표** 입력란을 클릭하면 현재 수집 중인 지표 목록이 표시됩니다. 목록에서 하나를 선택할 수 있습니다.
+#### Metrics
 
-지표 입력란의 오른쪽에는 활성화된 Y축 위치의 목록이 표시됩니다. 목록의 값을 선택하면 그 위치에 있는 Y축의 범위를 기준으로 지표가 차트에 그려집니다. 만약 해당 지표가 표시할 값이 Y축의 표현 범위를 벗어난다면, 그 지표의 가장 큰 값이 기준이 되어 표현 범위를 재설정합니다.
+To add a metric, click the **Add Metrics** button in the **Metrics** tab.
 
-선택한 지표에 레이블이 있을 때는 레이블값을 비교해 조건에 맞는 데이터만 조회할 수 있도록 **필터**를 설정할 수 있습니다. 지표의 레이블 중 하나를 선택하고 비교할 값을 입력합니다. 필터 조건은 여러 개의 레이블에 대해 지정할 수 있지만, 같은 레이블에 대해 중복으로 설정할 수는 없습니다. 비교 방법은 다음과 같습니다.
+Clicking the **Metrics** text box displays the list of the metrics currently being collected. You can select one from the list.
+
+To the right of the Metrics text box, the list of Y-axis positions is displayed. Once a value from the list is selected, metrics are drawn on the chart based on the range of Y-axis in that position. If the values representing the metrics are outside the expression range of the Y-axis, the expression range is reset based on the biggest value from the metrics.
+
+If there is a label for the selected metric, you can adjust **Filter** settings to look up only data that meets conditions by comparing the label values. Select one of the metric labels, and enter a value to compare with. You can specify a filter condition for multiple labels, but you cannot specify multiple filter conditions for the same label.
 
 
-연산자 | 의미 | 예시
--------- | ------- | -------
-`=` | 일치함 | `mode = user`<br/>`mode` 레이블값이 `user`인 것만 표시
-`!=` | 일치하지 않음 | `mode != idle`<br/>`mode` 레이블값이 `idle`이 아닌 것만 표시
-`=~` | 정규 표현식에 부합함 | `code =~ 2.*`<br/>`code` 레이블값이 `2`로 시작하는 것만 표시
-`!~` | 정규 표현식에 부합하지 않음 | `code !~ 5.*`<br/>`code` 레이블값이 `5`로 시작하지 않는 것만 표시
+| Operator | Meaning                               | Example                                                      |
+| -------- | ------------------------------------- | ------------------------------------------------------------ |
+| `=`      | Match                                 | `mode = user`<br/>`mode` Displays only labels whose value is `user` |
+| `!=`     | No match                              | `mode != idle`<br/>`mode` Displays only labels whose value is not `idle` |
+| `=~`     | Matches the regular expression        | `code =~ 2.*`<br/>`code` Displays only labels whose value starts with `2` |
+| `!~`     | Does not match the regular expression | `code !~ 5.*`<br/>`code` Displays only those labels whose value does not start with `5` |
 
-지표의 속성을 입력한 후 **등록** 버튼을 클릭하면 왼쪽 차트 미리 보기에서 의도한 대로 데이터가 그려지는지 확인할 수 있습니다.
+If you enter a property for the metric and click the **Register** button, you can see if the data is being drawn as intended in the preview of the left chart.
 
-#### 알림
+#### Notification
 
-알림을 설정하려면 **알림** 탭에서 **알림 추가** 버튼을 클릭합니다.
+To set up notification, click the **Add Notification** button in the **notification** tab.
 
-알림 설정을 구분할 수 있게 **이름**을 입력하고, 감시 대상의 **임계치**를 입력합니다. 설정한 임계치는 차트의 지표로 추가한 항목들 전체에 일괄 적용됩니다. 
-**지속시간**은 조건이 몇 분 이상 유지될 경우 이벤트가 발생한 것으로 판단할지 설정하는 것입니다. 만약 지속 시간을 '0'으로 입력하면 주기마다 수집된 값이 조건을 만족하는 즉시 이벤트가 발생한 것으로 처리합니다.
+To be able to distinguish the notification setting, enter **Name**, and then enter **Threshold** for the monitoring target. The specified threshold applied to all entries added as metrics for the chart. 
+**Duration** determines whether an event has occurred or not based on the duration of the condition maintained. If Duration is set to '0,' at every cycle as soon as collected values meet the condition, the event is triggered.
 
-**알림 그룹 리스트**에서는 System Monitoring에 생성된 알림 그룹을 선택할 수 있습니다. 이벤트가 발생하면 그룹에 지정된 발송 채널을 통해 그룹 내 사용자들에게 이벤트 발생 내역을 통지합니다. 단, 알림 그룹에서 참고하는 대상은 **알림 유형**과 **사용자 그룹** 항목이며 감시 설정이나 서버 목록은 OpenMetrics 모니터링과는 무관합니다.
+In **Notification Group List**, you can select a notification group created in System Monitoring. Once an event occurs, the detail about the event occurrence is notified to the users in the group through the send channel specified for the group. However, the targets the notification group refers to are **Notification Type** and **User Group**, and monitoring setting or server list is irrelevant to the OpenMetrics Monitoring.
 
-알림 설정에 필요한 각 항목을 입력한 후 **등록** 버튼을 클릭하면 입력했던 알림 이름이 목록에 추가된 것을 확인할 수 있습니다.
+If you enter each entry required for the notification settings and click the **Register** button, you will see the notification name added to the list.
 
-지표 선택과 알림 설정을 완료한 후 **차트 추가** 창 아래에 있는 **저장** 버튼을 클릭하면 차트가 생성됩니다.
+After selecting metrics and notification settings, click the **Save** button under the **Add Chart** window to generate a chart.
 
-### 차트 수정
+### Modify Chart
 
-각 차트의 오른쪽 위에 있는 톱니바퀴 모양의 아이콘을 클릭하면 차트를 수정할 수 있습니다. **차트 추가** 대화 상자에서 원하는 항목을 수정한 후 **수정** 버튼을 클릭합니다.
+By clicking the gear icon at the top right of each chart, you can modify the chart. In the **Add Chart** dialog, modify the one you want and then click the **modify** button.
 
-### 차트 삭제
+### Delete Chart
 
+By clicking the X icon at the top right of each chart, you can delete the chart. If you delete the chart, the notification settings enabled for the chart is also deleted.
 각 차트의 오른쪽 위에 있는 X 모양의 아이콘을 클릭하면 차트를 삭제할 수 있습니다. 차트를 삭제하면 차트에 활성화되어 있던 알림 설정도 함께 삭제됩니다.
