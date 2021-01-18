@@ -1,5 +1,5 @@
-## Compute > System Monitoring > OpenMetrics Monitoring > Overview
-The OpenMetrics Monitoring service is an extension monitoring tool that allows users to monitor various platforms and applications running on their instances.
+## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > Overview
+The Advanced Monitoring(OpenMetrics) service is an extension monitoring tool that allows users to monitor various platforms and applications running on their instances.
 Other than basic system metrics, there are also other ways to collect different metrics for users' varied situation.
 
 ## Introducing Prometheus
@@ -20,16 +20,7 @@ Other than basic system metrics, there are also other ways to collect different 
 * Generally, additional consumption of resources and network configuration management are necessary to build Prometheus and monitor it.
     * ![Prometheus](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-1.png)
 * In System Monitoring, as long as there is a path to extract metrics within each instance, the agent will collect metrics instead of users, and users can use the monitoring tool without building a separate service.
-    * ![System Monitoring OpenMetrics](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
-
-## Introducing OpenMetrics
-
-* [OpenMetrics](https://github.com/OpenObservability/OpenMetrics/blob/master/OpenMetrics.md) is a standardization project driven to be used by Prometheus description format and integrated systems based on the format.
-* System Monitoring also provides an OpenMetrics-based monitoring tool.
-* Generally, additional consumption of resources and network configuration management are necessary to build Prometheus and monitor it.
-  * ![Prometheus](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-1.png)
-* In System Monitoring, as long as there is a path to extract metrics within each instance, the agent will collect metrics instead of users, and users can use the monitoring tool without building a separate service.
-  * ![System Monitoring OpenMetrics](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
+    * ![System Monitoring Advanced Monitoring(OpenMetrics)](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
 
 ## Functions Provided
 

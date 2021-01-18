@@ -1,13 +1,13 @@
-## Compute > System Monitoring > OpenMetrics Monitoring > Console Guide
+## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > Console Guide
 
-Console Guide describes what are required to use OpenMetrics Monitoring.
+Console Guide describes what are required to use Advanced Monitoring(OpenMetrics).
 In **Compute > System Monitoring > OpenMetrics Dashboard**, you can define monitoring workspace and specify the collection target to collect random metrics that complies with the Exporter or its format.
 Collected metrics can be checked by configuring a chart in a similar way as Server Dashboard.
 
 ## Workspace
 
-The first thing you need to do to be able to use the OpenMetrics Monitoring function is to create your workspace. You can define those that share the same monitoring purpose and of the same nature as a single workspace, and monitor the visualization method of the collection target and metrics.
-Therefore, you need at least one workspace to be able to use the OpenMetrics Monitoring.
+The first thing you need to do to be able to use the Advanced Monitoring function is to create your workspace. You can define those that share the same monitoring purpose and of the same nature as a single workspace, and monitor the visualization method of the collection target and metrics.
+Therefore, you need at least one workspace to be able to use the Advanced Monitoring.
 
 ### Create Workspace
 
@@ -63,7 +63,7 @@ Status value is distinguished by color. For all collections except normal collec
 | Grey   | Preparing collection (right after collection targets are registered or the instance is stopped) |
 
 > If the grey color does not change even after a while, please update the Agent with the latest version.
-> ([How to install the Agent](https://docs.toast.com/ko/Compute/System%20Monitoring/ko/console-guide/#agent))
+> ([How to install the Agent](https://docs.toast.com/en/Compute/System%20Monitoring/en/console-guide/#agent))
 > If there is no change even after updating, please contact our Customer Center.
 
 ### Delete Collection Target
@@ -87,7 +87,7 @@ By clicking the **Manage** button above the dashboard, you can change the name o
 
 ## Chart
 
-Unlike the Server Dashboard that lets users select one of the charts provided by the system, OpenMetrics Monitoring dashboard allows users to directly specify the metrics and conditions that they want to show in their chart.
+Unlike the Server Dashboard that lets users select one of the charts provided by the system, Advanced Monitoring dashboard allows users to directly specify the metrics and conditions that they want to show in their chart.
 
 ### Create Chart
 
@@ -125,7 +125,7 @@ To set up notification, click the **Add Notification** button in the **notificat
 To be able to distinguish the notification setting, enter **Name**, and then enter **Threshold** for the monitoring target. The specified threshold applied to all entries added as metrics for the chart. 
 **Duration** determines whether an event has occurred or not based on the duration of the condition maintained. If Duration is set to '0,' at every cycle as soon as collected values meet the condition, the event is triggered.
 
-In **Notification Group List**, you can select a notification group created in System Monitoring. Once an event occurs, the detail about the event occurrence is notified to the users in the group through the send channel specified for the group. However, the targets the notification group refers to are **Notification Type** and **User Group**, and monitoring setting or server list is irrelevant to the OpenMetrics Monitoring.
+In **Notification Group List**, you can select a notification group created in System Monitoring. Once an event occurs, the detail about the event occurrence is notified to the users in the group through the send channel specified for the group. However, the targets the notification group refers to are **Notification Type** and **User Group**, and monitoring setting or server list is irrelevant to the Advanced Monitoring.
 
 If you enter each entry required for the notification settings and click the **Register** button, you will see the notification name added to the list.
 
@@ -138,4 +138,3 @@ By clicking the gear icon at the top right of each chart, you can modify the cha
 ### Delete Chart
 
 By clicking the X icon at the top right of each chart, you can delete the chart. If you delete the chart, the notification settings enabled for the chart is also deleted.
-각 차트의 오른쪽 위에 있는 X 모양의 아이콘을 클릭하면 차트를 삭제할 수 있습니다. 차트를 삭제하면 차트에 활성화되어 있던 알림 설정도 함께 삭제됩니다.
