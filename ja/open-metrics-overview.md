@@ -1,5 +1,5 @@
-## Compute > System Monitoring > OpenMetrics Monitoring > 概要
-**Compute > System Monitoring > OpenMetrics Monitoring**サービスは、ユーザーのインスタンスで動作する多様なプラットフォーム/アプリケーションのモニタリングを行うことができる拡張モニタリングツールです。
+## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > 概要
+**Compute > System Monitoring > Advanced Monitoring(OpenMetrics)**サービスは、ユーザーのインスタンスで動作する多様なプラットフォーム/アプリケーションのモニタリングを行うことができる拡張モニタリングツールです。
 基本的なシステム指標の他にもユーザーの状況に応じてさまざまな指標を収集できる方法を紹介します。
 
 ## Prometheus紹介
@@ -18,7 +18,7 @@
 * 一般的にPrometheusを構築してモニタリングを行うには追加でリソースを消費し、ネットワーク構成管理が必要です。
     * ![Prometheus](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-1.png)
 * System Monitoringでは、各インスタンス内で指標を抽出できるパスが準備されると、Agentが代わりに指標を収集し、ユーザーは別途サービスを構築することなくモニタリングツールを使用できます。
-    * ![System Monitoring OpenMetrics](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
+    * ![System Monitoring Advanced Monitoring(OpenMetrics)](https://static.toastoven.net/prod_system_monitoring/console_guide/open-metrics-overview-2.png)
 
 ## 提供機能
 ### OpenMetrics基盤のカスタム指標収集およびダッシュボード提供
