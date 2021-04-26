@@ -36,10 +36,6 @@ Metrics are collected every minute and retained for up to 5 years. Aggregate met
 
 | Aggregate Unit | Retention Period |
 | -------------- | ---------------- |
-| 1 min          | 7 d              |
-| 5 min          | 1 mon            |
-| 30 min         | 6 mon            |
-| 2 hr           | 2 yr             |
-| 1 d            | 5 yr             |
+| 1 min          | 1 yr             |
 
 > The max retention period is subject to change depending on the situation, and if it is changed, members will be notified separately.
