@@ -69,18 +69,18 @@ curl "http://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/query_range" -v -H
 
 | Metheod | endpoint |
 | --- | --- |
-| GET | /api/v1/query |
-| POST | /api/v1/query |
-| GET | /api/v1/query_range |
-| POST | /api/v1/query_range |
-| GET | /api/v1/series |
-| POST | /api/v1/series |
-| GET | /api/v1/labels |
-| POST | /api/v1/labels |
-| GET | /api/v1/label/<label_name>/values |
-| GET | /api/v1/targets |
-| GET | /api/v1/rules |
-| GET | /api/v1/alerts |
-| GET | /api/v1/targets/metadata |
-| GET | /api/v1/metadata |
+| GET | /prometheus/api/v1/query |
+| POST | /prometheus/api/v1/query |
+| GET | /prometheus/api/v1/query_range |
+| POST | /prometheus/api/v1/query_range |
+| GET | /prometheus/api/v1/series |
+| POST | /prometheus/api/v1/series |
+| GET | /prometheus/api/v1/labels |
+| POST | /prometheus/api/v1/labels |
+| GET | /prometheus/api/v1/label/<label_name>/values |
+| GET | /prometheus/api/v1/targets |
+| GET | /prometheus/api/v1/rules |
+| GET | /prometheus/api/v1/alerts |
+| GET | /prometheus/api/v1/targets/metadata |
+| GET | /prometheus/api/v1/metadata |
 
