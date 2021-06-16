@@ -26,7 +26,7 @@ Content-Type: application/json
 | X-TC-APP-KEY | projectAppkey | Compute > System Monitoring 의 우측 상단 URL & Appkey에서 확인 가능 |
 
 ```
-curl "http://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/query_range" -v -H'x-tc-app-key:appkey' -G --data-urlencode 'query=go_gc_duration_seconds' --data-urlencode 'start=2021-06-10T00:00:00Z' --data-urlencode 'end=2021-06-11T00:00:00Z' --data-urlencode 'step=10m'
+curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'x-tc-app-key:appkey'
 ```
 
 #### 결과
