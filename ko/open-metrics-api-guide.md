@@ -23,7 +23,7 @@ Content-Type: application/json
 
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
-| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring 의 우측 상단 URL & Appkey에서 확인 가능 |
+| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
 
 ```
 curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'x-tc-app-key:appkey'
@@ -63,7 +63,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 }
 ```
 
-상세한 내용은 <https://prometheus.io/docs/prometheus/latest/querying/api/> 참고 부탁드립니다.
+자세한 내용은 [Prometheus HTTP API](https://prometheus.io/docs/prometheus/latest/querying/api/)를 참고하시기 바랍니다.
 
 #### 사용 가능한 endpoint
 
