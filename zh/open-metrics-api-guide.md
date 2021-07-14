@@ -3,7 +3,7 @@
 ### 기본 정보
 ```http
 API Endpoint: https://kr1-api-sysmon.cloud.toast.com
-API Endpoint: https://kr1-api-sysmon.cloud.toast.com
+API Endpoint: https://kr2-api-sysmon.cloud.toast.com
 ```
 
 ## Open Metrics
