@@ -2,7 +2,7 @@
 
 ### Basic information
 ```http
-API Endpoint: https://kr1-api-sysmon.cloud.toast.com
+API Endpoint: https://us1-api-sysmon.cloud.toast.com
 ```
 
 ## Open Metrics
@@ -78,9 +78,5 @@ For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/
 | GET | /prometheus/api/v1/labels |
 | POST | /prometheus/api/v1/labels |
 | GET | /prometheus/api/v1/label/<label_name>/values |
-| GET | /prometheus/api/v1/targets |
-| GET | /prometheus/api/v1/rules |
-| GET | /prometheus/api/v1/alerts |
-| GET | /prometheus/api/v1/targets/metadata |
 | GET | /prometheus/api/v1/metadata |
 

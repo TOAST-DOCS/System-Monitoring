@@ -2,7 +2,7 @@
 
 ### 基本情報
 ```http
-API Endpoint: https://kr1-api-sysmon.cloud.toast.com
+API Endpoint: https://jp1-api-sysmon.cloud.toast.com
 ```
 
 ## Open Metrics
@@ -78,8 +78,4 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | GET | /prometheus/api/v1/labels |
 | POST | /prometheus/api/v1/labels |
 | GET | /prometheus/api/v1/label/<label_name>/values |
-| GET | /prometheus/api/v1/targets |
-| GET | /prometheus/api/v1/rules |
-| GET | /prometheus/api/v1/alerts |
-| GET | /prometheus/api/v1/targets/metadata |
 | GET | /prometheus/api/v1/metadata |
