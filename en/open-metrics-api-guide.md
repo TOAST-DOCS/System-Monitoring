@@ -1,8 +1,13 @@
 ## Compute > System Monitoring > API Guide
 
 ### Basic information
-```http
-API Endpoint: https://us1-api-sysmon.cloud.toast.com
+```
+http API Endpoint
+
+https://kr1-api-sysmon.cloud.toast.com
+https://kr2-api-sysmon.cloud.toast.com
+https://us1-api-sysmon.cloud.toast.com
+https://jp1-api-sysmon.cloud.toast.com
 ```
 
 ## Open Metrics
@@ -77,6 +82,6 @@ For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/
 | POST | /prometheus/api/v1/series |
 | GET | /prometheus/api/v1/labels |
 | POST | /prometheus/api/v1/labels |
-| GET | /prometheus/api/v1/label/<label_name>/values |
+| GET | /prometheus/api/v1/label/\{label_name\}/values |
 | GET | /prometheus/api/v1/metadata |
 
