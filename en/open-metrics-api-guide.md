@@ -4,12 +4,12 @@
 
 http API Endpoint
 
-| 리전 | 엔드포인트 |
+| Region | Endpoint |
 | --- | --- |
-| 한국(판교) 리전 | https://kr1-api-sysmon.cloud.toast.com |
-| 한국(평촌) 리전 | https://kr2-api-sysmon.cloud.toast.com |
-| 미국 리전 | https://us1-api-sysmon.cloud.toast.com |
-| 일본 리전 |    https://jp1-api-sysmon.cloud.toast.com |
+| Korea (Pangyo) Region | https://kr1-api-sysmon.cloud.toast.com |
+| Korea (Pyeongchon) Region | https://kr2-api-sysmon.cloud.toast.com |
+| United States  Region | https://us1-api-sysmon.cloud.toast.com |
+| Japan Region |    https://jp1-api-sysmon.cloud.toast.com |
 
 ## Open Metrics
 
