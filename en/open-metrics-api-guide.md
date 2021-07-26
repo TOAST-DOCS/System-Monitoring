@@ -1,14 +1,14 @@
-## Compute > System Monitoring > API 가이드
+## Compute > System Monitoring > API Guide
 
-### 기본 정보
+### Basic information
 ```http
-API Endpoint: https://kr1-api-sysmon.cloud.toast.com
+API Endpoint: https://us1-api-sysmon.cloud.toast.com
 ```
 
 ## Open Metrics
 
-### 1. Prometheus 호환 API
-- Prometheus 호환 API를 통해 Prometheus API를 사용할 수 있습니다.
+### 1. Prometheus-compatible API
+- Prometheus API can be used through a Prometheus-compatible API.
 
 [URL]
 
@@ -17,19 +17,19 @@ API Endpoint: https://kr1-api-sysmon.cloud.toast.com
 Content-Type: application/json
 ```
 
-#### 요청
+#### Request
 
 [Request Header]
 
-| 헤더 이름 | 값 | 비고|
+| Header name | Value | Note|
 | --- | --- | --- |
-| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
+| X-TC-APP-KEY | projectAppkey | projectAppkeyCan check from the URL & Appkey in the top right section of Compute > System Monitoring |
 
 ```
 curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'x-tc-app-key:appkey'
 ```
 
-#### 결과
+#### Results
 
 ```
 {
@@ -63,9 +63,9 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 }
 ```
 
-자세한 내용은 [Prometheus HTTP API](https://prometheus.io/docs/prometheus/latest/querying/api/)를 참고하시기 바랍니다.
+For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/prometheus/latest/querying/api/)
 
-#### 사용 가능한 endpoint
+#### Available endpoint
 
 | Metheod | endpoint |
 | --- | --- |
@@ -78,9 +78,5 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | GET | /prometheus/api/v1/labels |
 | POST | /prometheus/api/v1/labels |
 | GET | /prometheus/api/v1/label/<label_name>/values |
-| GET | /prometheus/api/v1/targets |
-| GET | /prometheus/api/v1/rules |
-| GET | /prometheus/api/v1/alerts |
-| GET | /prometheus/api/v1/targets/metadata |
 | GET | /prometheus/api/v1/metadata |
 
