@@ -1,14 +1,14 @@
 ## Compute > System Monitoring > API 가이드
 
 ### 기본 정보
-```
 http API Endpoint
 
-https://kr1-api-sysmon.cloud.toast.com
-https://kr2-api-sysmon.cloud.toast.com
-https://us1-api-sysmon.cloud.toast.com
-https://jp1-api-sysmon.cloud.toast.com
-```
+| 리전 | 엔드포인트 |
+| --- | --- |
+| 한국(판교) 리전 | https://kr1-api-sysmon.cloud.toast.com |
+| 한국(평촌) 리전 | https://kr2-api-sysmon.cloud.toast.com |
+| 미국 리전 | https://us1-api-sysmon.cloud.toast.com |
+| 일본 리전 |    https://jp1-api-sysmon.cloud.toast.com |
 
 ## Open Metrics
 
