@@ -1,9 +1,15 @@
 ## Compute > System Monitoring > APIガイド
 
 ### 基本情報
-```http
-API Endpoint: https://jp1-api-sysmon.cloud.toast.com
-```
+
+http API Endpoint
+
+| リージョン | エンドポイント |
+| --- | --- |
+| 韓国(パンギョ)リージョン | https://kr1-api-sysmon.cloud.toast.com |
+| 韓国(坪村)リージョン | https://kr2-api-sysmon.cloud.toast.com |
+| 米国リージョン | https://us1-api-sysmon.cloud.toast.com |
+| 日本リージョン |    https://jp1-api-sysmon.cloud.toast.com |
 
 ## Open Metrics
 
@@ -77,5 +83,5 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | POST | /prometheus/api/v1/series |
 | GET | /prometheus/api/v1/labels |
 | POST | /prometheus/api/v1/labels |
-| GET | /prometheus/api/v1/label/<label_name>/values |
+| GET | /prometheus/api/v1/label/\{label_name\}/values |
 | GET | /prometheus/api/v1/metadata |
