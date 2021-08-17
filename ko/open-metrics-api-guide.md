@@ -111,7 +111,23 @@ curl -i -X GET \
 #### 결과
 ```
 {
-    
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body":[
+      {
+         "jobId": "jobId",
+         "projectId": "projectId",
+         "jobName": "jobName",
+         "metricsPath": "/metricPath",
+         "description": "description",
+         "lstModifier": "lstModifier",
+         "lstModYmdt": "2021-08-17T10:32:09",
+         "reservedJobCd": null
+      }
+   ]
 }
 ```
 
@@ -128,7 +144,7 @@ curl -i -X GET \
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
-| X-Sysmon-Region | projectRegion |  |
+| X-Sysmon-Region | projectRegion | kr,k2,us,jp  |
 | Content-Type    | content Type  | application/json |
 
 [Request Body]
@@ -145,17 +161,31 @@ curl -i -X POST \
    -H "X-Sysmon-Region:kr" \
    -H "Content-Type:application/json" \
    -d \
-'{"jobName": "jobName",
- "metricsPath": "/url", 
- "description": "description"
-} ' \
+   '{"jobName": "jobName",
+   "metricsPath": "/metricPath", 
+   "description": "description"
+   } ' \
  'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs'
 ```
 
 #### 결과
 ```
 {
-    
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body":{
+      "jobId": "jobId",
+      "projectId": "projectId",
+      "jobName": "jobName",
+      "metricsPath": "/metricsPath",
+      "description": "description",
+      "lstModifier": null,
+      "lstModYmdt": "2021-08-17T10:30:06",
+      "reservedJobCd": null
+   }
 }
 ```
 
@@ -186,17 +216,31 @@ curl -i -X PUT \
    -H "x-tc-app-key:appkey" \
    -H "Content-Type:application/json" \
    -d \
-'{
- "metricsPath": "/url", 
- "description": "description"
-} ' \
+   '{
+   "metricsPath": "/updatemetricsPath", 
+   "description": "updatedescription"
+   } ' \
  'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/aOpreudC/jobs/{jobId}'
 ```
 
 #### 결과
 ```
 {
-    
+   header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body":{
+      "jobId": "jobId",
+      "projectId": "projectId",
+      "jobName": "jobName",
+      "metricsPath": "/updatemetricsPath",
+      "description": "updatedescription",
+      "lstModifier": null,
+      "lstModYmdt": "2021-08-17T10:35:06",
+      "reservedJobCd": null
+   }
 }
 ```
 
@@ -229,7 +273,12 @@ curl -i -X DELETE \
 #### 결과
 ```
 {
-    
+    "header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   "body": "jobId"
 }
 ```
 
@@ -259,7 +308,26 @@ curl -i -X DELETE \
 #### 결과
 ```
 {
-    
+    "header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   "body":[
+      {
+         "targetId": "targetId",
+         "jobId": "jobId",
+         "hostId": "hostId",
+         "port": 9100,
+         "resultCd": 0,
+         "failReason": null,
+         "mntrnStatCd": null,
+         "lstModifier": "lstModifier",
+         "lstModYmdt": "2021-08-17T11:06:29",
+         "hostNm": "hostNm",
+         "svrIp": "192.168.0.5"
+      }
+   ]
 }
 ```
 
@@ -275,8 +343,8 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
-| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
-| X-Sysmon-Region | projectRegion |  |
+| X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
+| X-Sysmon-Region | projectRegion | kr,k2,us,jp  |
 
 ```
  curl -i -X GET \
@@ -289,7 +357,20 @@ curl -i -X DELETE \
 #### 결과
 ```
 {
-    
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body":[
+      {
+      "hostId": "hostId",
+      "hostNm": "hostNm",
+      "svrIp": "192.168.0.5",
+      "projectId": "projectId",
+      "instanceId": "instanceId"
+      }
+   ]
 }
 ```
 
@@ -305,14 +386,14 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
-| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
+| X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
 | Content-Type    | content Type  | application/json |
 
 [Request Body]
 
 | 키 | 값 | 비고|
 | --- | --- | --- |
-| hostId        | 작업공간 이름     | metadata/v1.0/projects/aOpreudC/servers로 조회한 호스트ID |
+| hostId        | 작업공간 이름     | /openmetric/projects/{projectId}/servers로 조회한 호스트ID |
 | port          | 수집대상 PORT    |  |
 | description   | 수집대상 설명     |  |  
 
@@ -321,10 +402,10 @@ curl -i -X POST \
    -H "x-tc-app-key:appkey" \
    -H "Content-Type:application/json" \
    -d \
-'{"description": "description",
-"hostId": "host id",
-"port": "post number"
-} ' \
+   '{"description": "description",
+   "hostId": "host id",
+   "port": "post number"
+   } ' \
  'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs/{jobId}'
 
 ```
@@ -332,7 +413,12 @@ curl -i -X POST \
 #### 결과
 ```
 {
-    
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body": "targetId"
 }
 ```
 
@@ -366,6 +452,11 @@ curl -i -X DELETE \
 #### 결과
 ```
 {
-    
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body": "targetId"
 }
 ```
