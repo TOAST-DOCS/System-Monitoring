@@ -12,7 +12,7 @@ http API Endpoint
 
 ## Open Metrics
 
-### 1. Prometheus 호환 API
+### 1. 지표 조회 API
 - Prometheus 호환 API를 통해 Prometheus API를 사용할 수 있습니다.
 
 [URL]
@@ -86,9 +86,9 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | GET | /prometheus/api/v1/metadata |
 
 
-## Openmetric 작업공간 API
-- API를 통해 Openmetric 대시보드 작업공간 조회/생성/수정/삭제를 할 수 있습니다
-### 1. Openmetric 작업공간 조회
+## OpenMetrics 작업공간 API
+- API를 통해 OpenMetrics 대시보드의 작업공간 조회/생성/수정/삭제를 할 수 있습니다
+### 1. OpenMetrics 작업공간 조회
 
 [URL]
 ```http
@@ -131,7 +131,7 @@ curl -i -X GET \
 }
 ```
 
-### 2. Openmetric 작업공간 생성
+### 2. OpenMetrics 작업공간 생성
 
 [URL]
 ```http
@@ -189,7 +189,7 @@ curl -i -X POST \
 }
 ```
 
-### 3. Openmetric 작업공간 수정
+### 3. OpenMetrics 작업공간 수정
 
 [URL]
 ```http
@@ -244,7 +244,7 @@ curl -i -X PUT \
 }
 ```
 
-### 4. Openmetric 작업공간 삭제
+### 4. OpenMetrics 작업공간 삭제
 
 [URL]
 ```http
@@ -282,9 +282,9 @@ curl -i -X DELETE \
 }
 ```
 
-## Openmetric 수집대상 API
-- API를 통해 Openmetric 대시보드 수집대상 조회/생성/삭제를 할 수 있습니다
-### 1. Openmetric 수집대상 조회
+## OpenMetrics 수집대상 API
+- API를 통해 OpenMetrics 대시보드의 수집대상 조회/생성/삭제를 할 수 있습니다
+### 1. OpenMetrics 수집대상 조회
 
 [URL]
 ```http
@@ -331,7 +331,7 @@ curl -i -X DELETE \
 }
 ```
 
-### 2. Openmetric 수집대상 목록 조회
+### 2. OpenMetrics 수집대상 목록 조회
 
 [URL]
 ```http
@@ -374,7 +374,7 @@ curl -i -X DELETE \
 }
 ```
 
-### 3. Openmetric 수집대상 생성
+### 3. OpenMetrics 수집대상 생성
 
 [URL]
 ```http
@@ -422,7 +422,7 @@ curl -i -X POST \
 }
 ```
 
-### 4. Openmetric 수집대상 삭제
+### 4. OpenMetrics 수집대상 삭제
 
 [URL]
 ```http
