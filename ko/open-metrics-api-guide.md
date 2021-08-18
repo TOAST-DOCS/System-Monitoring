@@ -88,6 +88,13 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 ## OpenMetrics 작업공간 API
 - API를 통해 OpenMetrics 대시보드의 작업공간 조회/생성/수정/삭제를 할 수 있습니다
+
+#### 공통 에러 코드
+| response code | message | 설명|
+| --- | --- | --- |
+| 401 |     | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
+| 403 |     | 접근이 불가능한 Project에 접근 시도          |
+
 ### 1. OpenMetrics 작업공간 조회
 
 [URL]
@@ -155,6 +162,13 @@ curl -i -X GET \
 | metricsPath   | 작업공간 URL 경로 |  |
 | description   | 작업공간 설명     |  |  
 
+[오류 코드]
+| response code | resultCode | resultMessage         | 설명 |
+| ---           | ---        | ---                   | --- |
+| 200           |  -40001    | ALREADY_EXIST         | 입력한 값이 이미 존재합니다
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다
+
 ```
 curl -i -X POST \
    -H "x-tc-app-key:appkey" \
@@ -211,6 +225,13 @@ curl -i -X POST \
 | metricsPath   | 작업공간 URL 경로 |  |
 | description   | 작업공간 설명     |  |  
 
+[오류 코드]
+| response code | resultCode | resultMessage         | 설명 |
+| ---           | ---        | ---                   | --- |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다
+
 ```
 curl -i -X PUT \
    -H "x-tc-app-key:appkey" \
@@ -264,6 +285,13 @@ curl -i -X PUT \
 | --- | --- | --- |
 | memberId   | UUID |  |
 
+[오류 코드]
+| response code | resultCode | resultMessage         | 설명 |
+| ---           | ---        | ---                   | --- |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다
+
 ```
 curl -i -X DELETE \
    -H "x-tc-app-key:appkey" \
@@ -284,6 +312,13 @@ curl -i -X DELETE \
 
 ## OpenMetrics 수집대상 API
 - API를 통해 OpenMetrics 대시보드의 수집대상 조회/생성/삭제를 할 수 있습니다
+
+#### 에러 코드
+| response code | message | 설명|
+| --- | --- | --- |
+| 401 |     | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
+| 403 |     | 접근이 불가능한 Project에 접근 시도          |
+
 ### 1. OpenMetrics 수집대상 조회
 
 [URL]
@@ -397,6 +432,14 @@ curl -i -X DELETE \
 | port          | 수집대상 PORT    |  |
 | description   | 수집대상 설명     |  |  
 
+[오류 코드]
+| response code | resultCode | resultMessage         | 설명 |
+| ---           | ---        | ---                   | --- |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다
+| 200           |  -40004    | INVALID_HOST_OR_PROJECT | 입력한 hostId나 projectId가 잘못되었습니다
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다
+
 ```
 curl -i -X POST \
    -H "x-tc-app-key:appkey" \
@@ -442,6 +485,13 @@ curl -i -X POST \
 | --- | --- | --- |
 | memberId   | UUID |  |
 
+[오류 코드]
+| response code | resultCode | resultMessage         | 설명 |
+| ---           | ---        | ---                   | --- |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다
+| 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다
 ```
 curl -i -X DELETE \
    -H "x-tc-app-key:appkey" \
