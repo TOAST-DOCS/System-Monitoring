@@ -12,13 +12,13 @@ http API Endpoint
 
 ## Open Metrics
 
-### 1. 지표 조회 API
-- Prometheus 호환 API를 통해 Prometheus API를 사용할 수 있습니다.
+### 1. OpenMetrics 지표 조회 API
+- OpenMetrics 지표 조회 API를 사용할 수 있습니다.
 
 [URL]
 
 ```http
-[GET,POST,PUT,DELETE] /prometheus/{prometheus-api-endpoint}
+[GET,POST] /prometheus/{prometheus-api-endpoint}
 Content-Type: application/json
 ```
 
