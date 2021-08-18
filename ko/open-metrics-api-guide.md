@@ -90,11 +90,10 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 ### 2.1 Grafana란
 
-#### 메트릭 데이터를 시각화해서 보여주는 대쉬보드를 제공해주는 툴이다. 
+#### metric data를 시각화해서 보여주는 대쉬보드를 제공해주는 툴이다. 
 
 ### 2.2 Grafana를 사용해보자
 
-#### 사용 방법
 - Grafana를 설치 후 접속 로그인 한다.
 ![Grafana1](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide1.png)
 - Configuration -> Data sources로 접근한다.
@@ -105,20 +104,23 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 ![Grafana4](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide4.png)
 - 차례대로 Name, URL, Header를 입력한다.
 - 이 때 URL은 api-gateway의 주소 (ex: kr1-api-sysmon.cloud.toast.com) 에 prometheus api를 이용하기 위한 prefix (/prometheus)까지 입력한다. (ex: https://kr1-api-sysmon.cloud.toast.com/prometheus) 
-- Header값에는 key로 x-tc-app-key를, Value에는 SystemMonitoring상품의 appkey를 넣는다.
+- Header값에는 key로 x-tc-app-key를, Value에는 SystemMonitoring상품의 appkey를 넣는다. (Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능)
 ![Grafana5](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide5.png)
 - 맨 하단의 Save & test버튼을 눌러 위와같이 정상적으로 작동하는지 확인한다.
 ![Grafana6](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide6.png)
-- 메인화면으로 돌아가서d datasource목록에 새로 만든 datasource목록에 추가된 것을 확인할 수 있다.
+- 메인화면으로 돌아가면 목록에 새로 만든 datasource가 추가된 것을 확인할 수 있다.
+
+
+
 
 ## OpenMetrics 대시보드 작업공간 API
 - API를 통해 OpenMetrics 대시보드의 작업공간 조회/생성/수정/삭제를 할 수 있습니다
 
 #### 공통 에러 코드
-| response code | message | 설명|
-| --- | --- | --- |
-| 401 |     | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
-| 403 |     | 접근이 불가능한 Project에 접근 시도          |
+| response code | 설명|
+| --- | --- |
+| 401 | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
+| 403 | 접근이 불가능한 Project에 접근 시도         |
 
 ### 1. OpenMetrics 대시보드 작업공간 전체 조회
 
