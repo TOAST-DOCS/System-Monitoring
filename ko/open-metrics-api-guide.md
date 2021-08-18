@@ -97,7 +97,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 - Grafana를 설치 후 접속 로그인 합니다.
 - Configuration -> Data sources로 접근합니다.
 - 우측의 Add data source를 클릭합니다.
-![Grafana](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide.png)
+![Grafana](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guide_1.png)
 - Prometheus를 선택합니다.
 - Prometheus를 선택한 창에서 차례대로 Name, URL, Header를 입력합니다.
 - 이 때 URL은 api-gateway의 주소 (ex: kr1-api-sysmon.cloud.toast.com) 에 prometheus api를 이용하기 위한 prefix (/prometheus)까지 입력합니다. (ex: https://kr1-api-sysmon.cloud.toast.com/prometheus) 
