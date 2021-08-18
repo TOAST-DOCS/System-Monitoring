@@ -10,10 +10,10 @@ http API Endpoint
 | 미국 리전 | https://us1-api-sysmon.cloud.toast.com |
 | 일본 리전 |    https://jp1-api-sysmon.cloud.toast.com |
 
-## Open Metrics
+## Prometheus API
 
-### 1. OpenMetrics 지표 조회 API
-- OpenMetrics 지표 조회 API를 사용할 수 있습니다.
+### 1. Prometheus 지표 조회 API
+- Prometheus 지표 조회 API를 사용할 수 있습니다.
 
 [URL]
 
@@ -86,7 +86,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | GET | /prometheus/api/v1/metadata |
 
 
-## OpenMetrics 작업공간 API
+## OpenMetrics 대시보드 작업공간 API
 - API를 통해 OpenMetrics 대시보드의 작업공간 조회/생성/수정/삭제를 할 수 있습니다
 
 #### 공통 에러 코드
@@ -95,11 +95,11 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | 401 |     | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
 | 403 |     | 접근이 불가능한 Project에 접근 시도          |
 
-### 1. OpenMetrics 작업공간 조회
+### 1. OpenMetrics 대시보드 작업공간 전체 조회
 
 [URL]
 ```http
-[GET] /openmetric/projects/{projectId}/jobs
+[GET] /v1.0/projects/{projectId}/jobs
 ```
 
 #### 요청
@@ -112,7 +112,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 ```
 curl -i -X GET \
    -H "x-tc-app-key:appkey" \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
 #### 결과
@@ -138,11 +138,11 @@ curl -i -X GET \
 }
 ```
 
-### 2. OpenMetrics 작업공간 생성
+### 2. OpenMetrics 대시보드 작업공간 생성
 
 [URL]
 ```http
-[POST] /openmetric/projects/{projectId}/jobs
+[POST] /v1.0/projects/{projectId}/jobs
 ```
 
 #### 요청
@@ -179,7 +179,7 @@ curl -i -X POST \
    "metricsPath": "/metricPath", 
    "description": "description"
    } ' \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
 #### 결과
@@ -203,11 +203,52 @@ curl -i -X POST \
 }
 ```
 
-### 3. OpenMetrics 작업공간 수정
+### 3. OpenMetrics 대시보드 작업공간 개별 조회
 
 [URL]
 ```http
-[PUT] /openmetric/projects/{projectId}/jobs/{jobId}
+[GET] /v1.0/projects/{projectId}/jobs/{jobId}
+```
+
+#### 요청
+[Request Header]
+
+| 헤더 이름 | 값 | 비고|
+| --- | --- | --- |
+| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
+
+```
+curl -i -X GET \
+   -H "x-tc-app-key:appkey" \
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}'
+```
+
+#### 결과
+```
+{
+    header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   body":{
+      "jobId": "jobId",
+      "projectId": "projectId",
+      "jobName": "jobName",
+      "metricsPath": "/metricPath",
+      "description": "description",
+      "lstModifier": "lstModifier",
+      "lstModYmdt": "2021-08-17T10:32:09",
+      "reservedJobCd": null
+   }
+}
+```
+
+### 4. OpenMetrics 대시보드 작업공간 수정
+
+[URL]
+```http
+[PUT] /v1.0/projects/{projectId}/jobs/{jobId}
 ```
 
 #### 요청
@@ -241,7 +282,7 @@ curl -i -X PUT \
    "metricsPath": "/updatemetricsPath", 
    "description": "updatedescription"
    } ' \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/aOpreudC/jobs/{jobId}'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
 #### 결과
@@ -265,11 +306,11 @@ curl -i -X PUT \
 }
 ```
 
-### 4. OpenMetrics 작업공간 삭제
+### 5. OpenMetrics 대시보드 작업공간 삭제
 
 [URL]
 ```http
-[DELETE] /openmetric/projects/{projectId}/jobs/{jobId}?memberId=UUID
+[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}?memberId=UUID
 ```
 
 #### 요청
@@ -295,7 +336,7 @@ curl -i -X PUT \
 ```
 curl -i -X DELETE \
    -H "x-tc-app-key:appkey" \
- 'http://localhost:8011/openmetric/projects/aOpreudC/jobs/{jobId}?memberId=UUID'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}?memberId=UUID'
 ```
 
 #### 결과
@@ -310,7 +351,7 @@ curl -i -X DELETE \
 }
 ```
 
-## OpenMetrics 수집대상 API
+## OpenMetrics 대시보드 수집대상 API
 - API를 통해 OpenMetrics 대시보드의 수집대상 조회/생성/삭제를 할 수 있습니다
 
 #### 에러 코드
@@ -319,11 +360,11 @@ curl -i -X DELETE \
 | 401 |     | Appkey입력을 안했거나 유효하지않은 Appkey입력 |
 | 403 |     | 접근이 불가능한 Project에 접근 시도          |
 
-### 1. OpenMetrics 수집대상 조회
+### 1. OpenMetrics 대시보드 수집대상 전체 조회
 
 [URL]
 ```http
-[GET] /openmetric/projects/{projectId}/jobs/{jobId}/targets
+[GET] /v1.0/projects/{projectId}/jobs/{jobId}/targets
 ```
 
 #### 요청
@@ -336,7 +377,7 @@ curl -i -X DELETE \
 ```
  curl -i -X GET \
    -H "x-tc-app-key:appkey" \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs/{jobId}/targets
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}/targets
 
 ```
 
@@ -366,11 +407,11 @@ curl -i -X DELETE \
 }
 ```
 
-### 2. OpenMetrics 수집대상 목록 조회
+### 2. OpenMetrics 대시보드 수집대상 서버 조회
 
 [URL]
 ```http
-[GET] /openmetric/projects/{projectId}/servers
+[GET] /v1.0/projects/{projectId}/servers
 ```
 
 #### 요청
@@ -385,7 +426,7 @@ curl -i -X DELETE \
  curl -i -X GET \
    -H "x-tc-app-key:appkey" \
    -H "X-Sysmon-Region:kr" \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/servers'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/servers'
 
 ```
 
@@ -409,11 +450,11 @@ curl -i -X DELETE \
 }
 ```
 
-### 3. OpenMetrics 수집대상 생성
+### 3. OpenMetrics 대시보드 수집대상 생성
 
 [URL]
 ```http
-[POST] /openmetric/projects/{projectId}/jobs/{jobId}/targets
+[POST] /v1.0/projects/{projectId}/jobs/{jobId}/targets
 ```
 
 #### 요청
@@ -428,7 +469,7 @@ curl -i -X DELETE \
 
 | 키 | 값 | 비고|
 | --- | --- | --- |
-| hostId        | 작업공간 이름     | /openmetric/projects/{projectId}/servers로 조회한 호스트ID |
+| hostId        | 작업공간 이름     | /v1.0/projects/{projectId}/servers로 조회한 호스트ID |
 | port          | 수집대상 PORT    |  |
 | description   | 수집대상 설명     |  |  
 
@@ -449,7 +490,7 @@ curl -i -X POST \
    "hostId": "host id",
    "port": "post number"
    } ' \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs/{jobId}'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}'
 
 ```
 
@@ -465,11 +506,56 @@ curl -i -X POST \
 }
 ```
 
-### 4. OpenMetrics 수집대상 삭제
+### 4. OpenMetrics 대시보드 수집대상 개별 조회
 
 [URL]
 ```http
-[DELETE] /openmetric/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID
+[GET] /v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}
+```
+
+#### 요청
+[Request Header]
+
+| 헤더 이름 | 값 | 비고|
+| --- | --- | --- |
+| X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능 |
+
+```
+ curl -i -X GET \
+   -H "x-tc-app-key:appkey" \
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}
+
+```
+
+#### 결과
+```
+{
+    "header":{
+      "isSuccessful": true,
+      "resultCode": 0,
+      "resultMessage": "SUCCESS"
+   },
+   "body":{
+      "targetId": "targetId",
+      "jobId": "jobId",
+      "hostId": "hostId",
+      "port": 9100,
+      "resultCd": 0,
+      "failReason": null,
+      "mntrnStatCd": null,
+      "lstModifier": "lstModifier",
+      "lstModYmdt": "2021-08-17T11:06:29",
+      "hostNm": "hostNm",
+      "svrIp": "192.168.0.5"
+   }
+}
+```
+
+### 5. OpenMetrics 대시보드 수집대상 삭제
+
+[URL]
+```http
+[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID
 ```
 
 #### 요청
@@ -495,7 +581,7 @@ curl -i -X POST \
 ```
 curl -i -X DELETE \
    -H "x-tc-app-key:appkey" \
- 'https://kr1-api-sysmon.cloud.toast.com/openmetric/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID'
 
 ```
 
