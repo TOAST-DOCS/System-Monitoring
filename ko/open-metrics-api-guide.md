@@ -512,9 +512,9 @@ curl -i -X DELETE \
 | body[].jobId          | 작업공간 ID      | 
 | body[].hostId         | 수집대상 호스트 ID | 
 | body[].port           | 수집대상 포트번호   | 
-| body[].resultCd       |        | 
-| body[].failReason     |        | 
-| body[].mntrnStatCd    | 모니터링상태코드    | 
+| body[].resultCd       | 수집대상 연결 결과 코드| 
+| body[].failReason     | 수집대상 연결 실패 이유| 
+| body[].mntrnStatCd    | 수집대상 모니터링 상태코드| 
 | body[].lstModifier    | 최근수정자 UUID   |  
 | body[].lstModYmdt     | 최근수정일자      |  
 | body[].hostNm         | 수집대상 이름     |  
@@ -574,7 +574,7 @@ curl -i -X DELETE \
 | body[].hostNm        | 호스트 이름       | 
 | body[].projectId     | 프로젝트 ID      | 
 | body[].svrIp         | 호스트 ID        | 
-| body[].instanceId    |               | 
+| body[].instanceId    | 인스턴스 ID       | 
 
 ### 3. OpenMetrics 대시보드 수집대상 생성
 
@@ -632,6 +632,15 @@ curl -i -X POST \
 }
 ```
 
+[Response Body]
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful | API호출 성공 여부 | 
+| header.resultCode   | API호출 결과 코드 |
+| header.resultMessage| API호출 결과 메세지|  
+| body                | 생성된 수집대상 ID | 
+
 ### 4. OpenMetrics 대시보드 수집대상 개별 조회
 
 [URL]
@@ -688,8 +697,8 @@ curl -i -X POST \
 | body.jobId          | 작업공간 ID      | 
 | body.hostId         | 수집대상 호스트 ID | 
 | body.port           | 수집대상 포트번호   | 
-| body.resultCd       |        | 
-| body.failReason     |        | 
+| body.resultCd       | 수집대상 연결 결과 코드| 
+| body.failReason     | 수집대상 연결 실패 이유|
 | body.mntrnStatCd    | 모니터링상태코드    | 
 | body.lstModifier    | 최근수정자 UUID   |  
 | body.lstModYmdt     | 최근수정일자      |  
