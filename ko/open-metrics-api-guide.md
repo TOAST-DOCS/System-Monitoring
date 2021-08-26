@@ -395,7 +395,7 @@ curl -i -X PUT \
 
 [URL]
 ```http
-[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}?memberId=UUID
+[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}
 ```
 
 #### 요청
@@ -404,12 +404,6 @@ curl -i -X PUT \
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-
-[Query Parameter]
-
-| 키 | 값 | 비고|
-| --- | --- | --- |
-| memberId   | UUID |  |
 
 [오류 코드]
 | response code | resultCode | resultMessage         | 설명 |
@@ -421,7 +415,7 @@ curl -i -X PUT \
 ```
 curl -i -X DELETE \
    -H "X-TC-APP-KEY:appkey" \
- 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}?memberId=UUID'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
 #### 결과
@@ -709,7 +703,7 @@ curl -i -X POST \
 
 [URL]
 ```http
-[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID
+[DELETE] /v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}
 ```
 
 #### 요청
@@ -718,12 +712,6 @@ curl -i -X POST \
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
 | X-TC-APP-KEY | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-
-[Query Parameter]
-
-| 키 | 값 | 비고|
-| --- | --- | --- |
-| memberId   | UUID |  |
 
 [오류 코드]
 | response code | resultCode | resultMessage         | 설명 |
@@ -735,7 +723,7 @@ curl -i -X POST \
 ```
 curl -i -X DELETE \
    -H "X-TC-APP-KEY:appkey" \
- 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}?memberId=UUID'
+ 'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}/targets/{targetId}'
 
 ```
 
