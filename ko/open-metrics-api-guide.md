@@ -188,7 +188,6 @@ curl -i -X GET \
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-| X-SYSMON-REGION | projectRegion | kr,kr2,us,jp  |
 | Content-Type    | content Type  | application/json |
 
 [Request Body]
@@ -209,7 +208,6 @@ curl -i -X GET \
 ```
 curl -i -X POST \
    -H "X-TC-APP-KEY:appkey" \
-   -H "X-SYSMON-REGION:kr" \
    -H "Content-Type:application/json" \
    -d \
    '{"jobName": "jobName",
@@ -527,12 +525,10 @@ curl -i -X DELETE \
 | 헤더 이름 | 값 | 비고|
 | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-| X-SYSMON-REGION | projectRegion | kr,kr2,us,jp  |
 
 ```
  curl -i -X GET \
    -H "X-TC-APP-KEY:appkey" \
-   -H "X-SYSMON-REGION:kr" \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/servers'
 
 ```
