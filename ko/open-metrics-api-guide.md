@@ -406,7 +406,6 @@ curl -i -X PUT \
 [오류 코드]
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다    |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
 
@@ -712,7 +711,6 @@ curl -i -X POST \
 [오류 코드]
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다  |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다     |
 | 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다  |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다    |
