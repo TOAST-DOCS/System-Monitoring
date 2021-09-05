@@ -584,7 +584,7 @@ curl -i -X DELETE \
 
 | 키 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| hostId        | 수집대상으로 추가항 서버 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다 |
+| hostId        | 수집대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다 |
 | port          | 수집대상 PORT    | O |  |
 | description   | 수집대상 설명     |   |  |  
 
