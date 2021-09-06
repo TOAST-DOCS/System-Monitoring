@@ -199,6 +199,7 @@ curl -i -X GET \
 | description   | 작업공간 설명     |   |  |  
 
 [오류 코드]
+
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40001    | ALREADY_EXIST         | 입력한 값이 이미 존재합니다 |
@@ -334,6 +335,7 @@ curl -i -X GET \
 | description   | 작업공간 설명     |   |  |
 
 [오류 코드]
+
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
@@ -404,6 +406,7 @@ curl -i -X PUT \
 | X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
 
 [오류 코드]
+
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다    |
@@ -588,6 +591,7 @@ curl -i -X DELETE \
 | port          | 수집대상 PORT    | O |  |
 
 [오류 코드]
+
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
@@ -707,11 +711,13 @@ curl -i -X POST \
 | X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
 
 [오류 코드]
+
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다     |
 | 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다  |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다    |
+
 ```
 curl -i -X DELETE \
    -H "X-TC-APP-KEY:appkey" \
