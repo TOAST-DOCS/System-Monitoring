@@ -586,7 +586,6 @@ curl -i -X DELETE \
 | --- | --- | --- | --- |
 | hostId        | 수집대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다 |
 | port          | 수집대상 PORT    | O |  |
-| description   | 수집대상 설명     |   |  |  
 
 [오류 코드]
 | response code | resultCode | resultMessage         | 설명 |
@@ -601,8 +600,7 @@ curl -i -X POST \
    -H "X-TC-APP-KEY:appkey" \
    -H "Content-Type:application/json" \
    -d \
-   '{"description": "description",
-   "hostId": "host id",
+   '{"hostId": "host id",
    "port": "post number"
    } ' \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}'
