@@ -340,6 +340,7 @@ curl -i -X GET \
 | ---           | ---        | ---                   | --- |
 | 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다   |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본작업공간은 수정할 수 없습니다 |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
 
 ```
@@ -410,6 +411,7 @@ curl -i -X PUT \
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다    |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업공간은 삭제할 수 없습니다 |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
 
 ```
@@ -597,6 +599,7 @@ curl -i -X DELETE \
 | 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
 | 200           |  -40004    | INVALID_HOST_OR_PROJECT | 입력한 hostId나 projectId가 잘못되었습니다 |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다   |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본작업공간엔 추가할 수 없습니다 |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
 
 ```
@@ -716,6 +719,7 @@ curl -i -X POST \
 | ---           | ---        | ---                   | --- |
 | 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다     |
 | 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다  |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본작업공간에서 삭제할 수 없습니다 |
 | 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다    |
 
 ```
