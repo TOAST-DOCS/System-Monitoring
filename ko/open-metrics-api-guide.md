@@ -129,6 +129,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-SYSMON-REGION | regionCode    | O | kr,kr2,jp,us 조회하고 싶은 region의 코드를 입력합니다 |
 
 ```
 curl -i -X GET \
@@ -188,6 +189,7 @@ curl -i -X GET \
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
 | X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-SYSMON-REGION | regionCode    | O | kr,kr2,jp,us 조회하고 싶은 region의 코드를 입력합니다 |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
