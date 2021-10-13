@@ -28,7 +28,7 @@ Content-Type: application/json
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
 curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'X-TC-APP-KEY:appkey'
@@ -108,13 +108,13 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 
 ## OpenMetrics 대시보드 작업 공간 API
-- API를 통해 OpenMetrics 대시보드의 작업 공간 조회/생성/수정/삭제를 할 수 있습니다.
+- API를 사용해 OpenMetrics 대시보드의 작업 공간을 조회, 생성, 수정, 삭제할 수 있습니다.
 
 #### 공통 에러 코드
 | response code | 설명|
 | --- | --- |
-| 401 | Appkey가 입력되지 않았거나 입력된 Appkey가 유효하지 않습니다  |
-| 403 | 접근이 불가능한 Project에 접근 시도했습니다      |
+| 401 | Appkey가 입력되지 않았거나 입력된 Appkey가 유효하지 않습니다.  |
+| 403 | 접근이 불가능한 Project에 접근 시도했습니다.      |
 
 ### 1. OpenMetrics 대시보드 작업 공간 전체 조회
 
@@ -128,8 +128,8 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-| X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다(kr, kr2, jp, us) |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다.(kr, kr2, jp, us) |
 
 ```
 curl -i -X GET \
@@ -189,8 +189,8 @@ curl -i -X GET \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-| X-SYSMON-REGION | regionCode    | O | 작업 공간을 생성하고자 하는 region의 코드를 입력합니다(kr, kr2, jp, us) |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-SYSMON-REGION | regionCode    | O | 작업 공간을 생성하고자 하는 region의 코드를 입력합니다.(kr, kr2, jp, us) |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -205,9 +205,9 @@ curl -i -X GET \
 
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40001    | ALREADY_EXIST         | 입력한 값이 이미 존재합니다 |
-| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
-| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다  |
+| 200           |  -40001    | ALREADY_EXIST         | 입력한 값이 이미 존재합니다. |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다. |
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다.  |
 
 ```
 curl -i -X POST \
@@ -271,7 +271,7 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
 curl -i -X GET \
@@ -328,7 +328,7 @@ curl -i -X GET \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -342,10 +342,10 @@ curl -i -X GET \
 
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
-| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다   |
-| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간은 수정할 수 없습니다 |
-| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다. |
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다.   |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간은 수정할 수 없습니다. |
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다.  |
 
 ```
 curl -i -X PUT \
@@ -408,15 +408,15 @@ curl -i -X PUT \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 [오류 코드]
 
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다    |
-| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간은 삭제할 수 없습니다 |
-| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다.   |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간은 삭제할 수 없습니다. |
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다.   |
 
 ```
 curl -i -X DELETE \
@@ -446,13 +446,13 @@ curl -i -X DELETE \
 | body                 | 삭제된 작업 공간 ID | 
 
 ## OpenMetrics 대시보드 수집 대상 API
-- API를 통해 OpenMetrics 대시보드의 수집 대상 조회/생성/삭제를 할 수 있습니다
+- API를 통해 OpenMetrics 대시보드의 수집 대상 조회/생성/삭제를 할 수 있습니다.
 
 #### 에러 코드
 | response code | message | 설명|
 | --- | --- | --- |
-| 401 |     | Appkey가 입력되지 않았거나 입력된 Appkey가 유효하지 않습니다 |
-| 403 |     | 접근이 불가능한 Project에 접근 시도했습니다       |
+| 401 |     | Appkey가 입력되지 않았거나 입력된 Appkey가 유효하지 않습니다. |
+| 403 |     | 접근이 불가능한 Project에 접근 시도했습니다.       |
 
 ### 1. OpenMetrics 대시보드 수집 대상 전체 조회
 
@@ -466,7 +466,7 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
  curl -i -X GET \
@@ -532,8 +532,8 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
-| X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다(kr, kr2, jp, us) |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다.(kr, kr2, jp, us) |
 
 ```
  curl -i -X GET \
@@ -588,25 +588,25 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
 
 | 키 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다 |
+| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다. |
 | port          | 수집 대상 PORT    | O |  |
 
 [오류 코드]
 
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다 |
-| 200           |  -40004    | INVALID_HOST_OR_PROJECT | 입력한 hostId나 projectId가 잘못되었습니다 |
-| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다   |
-| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간엔 추가할 수 없습니다 |
-| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다   |
+| 200           |  -40002    | BAD_INPUT_VALUE       | API 입력값이 잘못되었습니다. |
+| 200           |  -40004    | INVALID_HOST_OR_PROJECT | 입력한 hostId나 projectId가 잘못되었습니다. |
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다.   |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간엔 추가할 수 없습니다. |
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다.   |
 
 ```
 curl -i -X POST \
@@ -653,7 +653,7 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
  curl -i -X GET \
@@ -717,16 +717,16 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다 |
+| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 [오류 코드]
 
 | response code | resultCode | resultMessage         | 설명 |
 | ---           | ---        | ---                   | --- |
-| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다     |
-| 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다  |
-| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간에서 삭제할 수 없습니다 |
-| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다    |
+| 200           |  -40006    | NOT_FOUND_JOB         | 입력한 jobId가 없습니다.     |
+| 200           |  -40007    | NOT_FOUND_TARGET      | 입력한 targetId가 없습니다.  |
+| 200           |  -40012    | SYSTEM_RESERVED_JOB   | 기본 작업 공간에서 삭제할 수 없습니다. |
+| 200           |  -50000    | INTERNAL_SERVER_ERROR | 서버 에러가 발생하였습니다.    |
 
 ```
 curl -i -X DELETE \
