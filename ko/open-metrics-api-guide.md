@@ -699,7 +699,7 @@ curl -i -X POST \
 | body.port           | 수집 대상 포트 번호   | 
 | body.resultCd       | 수집 대상 연결 결과 코드| 
 | body.failReason     | 수집 대상 연결 실패 이유|
-| body.mntrnStatCd    | 모니터링상태 코드    | 
+| body.mntrnStatCd    | 모니터링 상태 코드    | 
 | body.lstModifier    | 최근 수정자 UUID   |  
 | body.lstModYmdt     | 최근 수정 일자      |  
 | body.hostNm         | 수집 대상 이름     |  
