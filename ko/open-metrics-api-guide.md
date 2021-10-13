@@ -446,7 +446,7 @@ curl -i -X DELETE \
 | body                 | 삭제된 작업 공간 ID | 
 
 ## OpenMetrics 대시보드 수집 대상 API
-- API를 통해 OpenMetrics 대시보드의 수집 대상 조회/생성/삭제를 할 수 있습니다.
+- API를 사용해 OpenMetrics 대시보드의 수집 대상을 조회, 생성, 삭제할 수 있습니다
 
 #### 에러 코드
 | response code | message | 설명|
