@@ -8,18 +8,18 @@ http API Endpoint
 | --- | --- |
 | Korea (Pangyo) Region | https://kr1-api-sysmon.cloud.toast.com |
 | Korea (Pyeongchon) Region | https://kr2-api-sysmon.cloud.toast.com |
-| United States  Region | https://us1-api-sysmon.cloud.toast.com |
+| United States Region | https://us1-api-sysmon.cloud.toast.com |
 | Japan Region |    https://jp1-api-sysmon.cloud.toast.com |
 
-## Open Metrics
+## Prometheus API
 
-### 1. Prometheus-compatible API
-- Prometheus API can be used through a Prometheus-compatible API.
+### 1. Prometheus Metrics Query API
+- You can use Prometheus metrics query API.
 
 [URL]
 
 ```http
-[GET,POST,PUT,DELETE] /prometheus/{prometheus-api-endpoint}
+[GET,POST] /prometheus/{prometheus-api-endpoint}
 Content-Type: application/json
 ```
 
@@ -27,15 +27,15 @@ Content-Type: application/json
 
 [Request Header]
 
-| Header name | Value | Note|
-| --- | --- | --- |
-| X-TC-APP-KEY | projectAppkey | projectAppkeyCan check from the URL & Appkey in the top right section of Compute > System Monitoring |
+| Header name | Value | Required | Note|
+| --- | --- | --- | --- |
+| X-TC-APP-KEY | projectAppkey | O | Can be checked from the URL & Appkey in the top right section of Compute > System Monitoring |
 
 ```
-curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'x-tc-app-key:appkey'
+curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'X-TC-APP-KEY:appkey'
 ```
 
-#### Results
+#### Result
 
 ```
 {
