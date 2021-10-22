@@ -28,7 +28,7 @@ Content-Type: application/json
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Can be checked from the URL & Appkey in the top right section of Compute > System Monitoring |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
 
 ```
 curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'X-TC-APP-KEY:appkey'
