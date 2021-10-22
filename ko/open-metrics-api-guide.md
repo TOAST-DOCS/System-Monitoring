@@ -72,7 +72,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 #### 사용 가능한 endpoint
 
-| Metheod | endpoint |
+| Method | endpoint |
 | --- | --- |
 | GET | /prometheus/api/v1/query |
 | POST | /prometheus/api/v1/query |
@@ -573,7 +573,7 @@ curl -i -X DELETE \
 | body[].hostId        | 호스트 ID        | 
 | body[].hostNm        | 호스트 이름       | 
 | body[].projectId     | 프로젝트 ID      | 
-| body[].svrIp         | 호스트 ID        | 
+| body[].svrIp         | 서버 IP        | 
 | body[].instanceId    | 인스턴스 ID       | 
 
 ### 3. OpenMetrics 대시보드 수집 대상 생성
@@ -595,7 +595,7 @@ curl -i -X DELETE \
 
 | 키 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다. |
+| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트 ID 입니다. |
 | port          | 수집 대상 PORT    | O |  |
 
 [오류 코드]
