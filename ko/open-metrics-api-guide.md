@@ -72,7 +72,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 #### 사용 가능한 endpoint
 
-| Metheod | endpoint |
+| Method | endpoint |
 | --- | --- |
 | GET | /prometheus/api/v1/query |
 | POST | /prometheus/api/v1/query |
@@ -138,7 +138,23 @@ curl -i -X GET \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful   | API 호출 성공 여부 | 
+| header.resultCode     | API 호출 결과 코드 |
+| header.resultMessage  | API 호출 결과 메세지|  
+| body[].jobId          | 작업 공간 ID      | 
+| body[].projectId      | 프로젝트 ID      |
+| body[].jobName        | 작업 공간 이름     |  
+| body[].metricsPath    | 작업 공간 URL 경로 | 
+| body[].description    | 작업 공간 설명     |
+| body[].lstModifier    | 최근 수정자 UUID   |  
+| body[].lstModYmdt     | 최근 수정 일자      |  
+| body[].reservedJobCd  | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
+
+[예시]
 ```
 {
     "header":{
@@ -160,22 +176,6 @@ curl -i -X GET \
    ]
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful   | API 호출 성공 여부 | 
-| header.resultCode     | API 호출 결과 코드 |
-| header.resultMessage  | API 호출 결과 메세지|  
-| body[].jobId          | 작업 공간 ID      | 
-| body[].projectId      | 프로젝트 ID      |
-| body[].jobName        | 작업 공간 이름     |  
-| body[].metricsPath    | 작업 공간 URL 경로 | 
-| body[].description    | 작업 공간 설명     |
-| body[].lstModifier    | 최근 수정자 UUID   |  
-| body[].lstModYmdt     | 최근 수정 일자      |  
-| body[].reservedJobCd  | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
 
 ### 2. OpenMetrics 대시보드 작업 공간 생성
 
@@ -222,7 +222,23 @@ curl -i -X POST \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful  | API 호출 성공 여부 | 
+| header.resultCode    | API 호출 결과 코드 |
+| header.resultMessage | API 호출 결과 메세지|  
+| body.jobId           | 생성된 작업 공간 ID      | 
+| body.projectId       | 프로젝트 ID      |
+| body.jobName         | 생성된 작업 공간 이름     |  
+| body.metricsPath     | 생성된 작업 공간 URL 경로 | 
+| body.description     | 생성된 작업 공간 설명     |
+| body.lstModifier     | 최근 수정자 UUID   |  
+| body.lstModYmdt      | 최근 수정 일자      |  
+| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
+
+[예시]
 ```
 {
     "header":{
@@ -242,22 +258,6 @@ curl -i -X POST \
    }
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful  | API 호출 성공 여부 | 
-| header.resultCode    | API 호출 결과 코드 |
-| header.resultMessage | API 호출 결과 메세지|  
-| body.jobId           | 생성된 작업 공간 ID      | 
-| body.projectId       | 프로젝트 ID      |
-| body.jobName         | 생성된 작업 공간 이름     |  
-| body.metricsPath     | 생성된 작업 공간 URL 경로 | 
-| body.description     | 생성된 작업 공간 설명     |
-| body.lstModifier     | 최근 수정자 UUID   |  
-| body.lstModYmdt      | 최근 수정 일자      |  
-| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
 
 ### 3. OpenMetrics 대시보드 작업 공간 개별 조회
 
@@ -279,7 +279,23 @@ curl -i -X GET \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}'
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful  | API 호출 성공 여부 | 
+| header.resultCode    | API 호출 결과 코드 |
+| header.resultMessage | API 호출 결과 메세지|  
+| body.jobId           | 작업 공간 ID      | 
+| body.projectId       | 프로젝트 ID      |
+| body.jobName         | 작업 공간 이름     |  
+| body.metricsPath     | 작업 공간 URL 경로 | 
+| body.description     | 작업 공간 설명     |
+| body.lstModifier     | 최근 수정자 UUID   |  
+| body.lstModYmdt      | 최근 수정 일자      |  
+| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
+
+[예시]
 ```
 {
     "header":{
@@ -299,22 +315,6 @@ curl -i -X GET \
    }
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful  | API 호출 성공 여부 | 
-| header.resultCode    | API 호출 결과 코드 |
-| header.resultMessage | API 호출 결과 메세지|  
-| body.jobId           | 작업 공간 ID      | 
-| body.projectId       | 프로젝트 ID      |
-| body.jobName         | 작업 공간 이름     |  
-| body.metricsPath     | 작업 공간 URL 경로 | 
-| body.description     | 작업 공간 설명     |
-| body.lstModifier     | 최근 수정자 UUID   |  
-| body.lstModYmdt      | 최근 수정 일자      |  
-| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
 
 ### 4. OpenMetrics 대시보드 작업 공간 수정
 
@@ -359,7 +359,23 @@ curl -i -X PUT \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful  | API 호출 성공 여부 | 
+| header.resultCode    | API 호출 결과 코드 |
+| header.resultMessage | API 호출 결과 메세지|  
+| body.jobId           | 작업 공간 ID      | 
+| body.projectId       | 프로젝트 ID      |
+| body.jobName         | 작업 공간 이름     |  
+| body.metricsPath     | 수정된 작업 공간 URL 경로 | 
+| body.description     | 수정된 작업 공간 설명     |
+| body.lstModifier     | 최근 수정자 UUID   |  
+| body.lstModYmdt      | 최근 수정 일자      |  
+| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
+
+[예시]
 ```
 {
    "header":{
@@ -379,22 +395,6 @@ curl -i -X PUT \
    }
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful  | API 호출 성공 여부 | 
-| header.resultCode    | API 호출 결과 코드 |
-| header.resultMessage | API 호출 결과 메세지|  
-| body.jobId           | 작업 공간 ID      | 
-| body.projectId       | 프로젝트 ID      |
-| body.jobName         | 작업 공간 이름     |  
-| body.metricsPath     | 수정된 작업 공간 URL 경로 | 
-| body.description     | 수정된 작업 공간 설명     |
-| body.lstModifier     | 최근 수정자 UUID   |  
-| body.lstModYmdt      | 최근 수정 일자      |  
-| body.reservedJobCd   | 작업 공간 생성 유형 (null이면 사용자 직접 생성)  |  
 
 ### 5. OpenMetrics 대시보드 작업 공간 삭제
 
@@ -424,7 +424,16 @@ curl -i -X DELETE \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful  | API 호출 성공 여부 | 
+| header.resultCode    | API 호출 결과 코드 |
+| header.resultMessage | API 호출 결과 메세지|  
+| body                 | 삭제된 작업 공간 ID | 
+
+[예시]
 ```
 {
    "header":{
@@ -435,15 +444,6 @@ curl -i -X DELETE \
    "body": "jobId"
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful  | API 호출 성공 여부 | 
-| header.resultCode    | API 호출 결과 코드 |
-| header.resultMessage | API 호출 결과 메세지|  
-| body                 | 삭제된 작업 공간 ID | 
 
 ## OpenMetrics 대시보드 수집 대상 API
 - API를 사용해 OpenMetrics 대시보드의 수집 대상을 조회, 생성, 삭제할 수 있습니다.
@@ -475,7 +475,26 @@ curl -i -X DELETE \
 
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful   | API 호출 성공 여부 | 
+| header.resultCode     | API 호출 결과 코드 |
+| header.resultMessage  | API 호출 결과 메세지|  
+| body[].targetId       | 수집 대상 ID      | 
+| body[].jobId          | 작업 공간 ID      | 
+| body[].hostId         | 수집 대상 호스트 ID | 
+| body[].port           | 수집 대상 포트 번호   | 
+| body[].resultCd       | 수집 대상 연결 결과 코드| 
+| body[].failReason     | 수집 대상 연결 실패 이유| 
+| body[].mntrnStatCd    | 수집 대상 모니터링 상태 코드| 
+| body[].lstModifier    | 최근 수정자 UUID   |  
+| body[].lstModYmdt     | 최근 수정 일자      |  
+| body[].hostNm         | 수집 대상 이름     |  
+| body[].svrIp          | 수집 대상 IP      |  
+
+[예시]
 ```
 {
     "header":{
@@ -501,25 +520,6 @@ curl -i -X DELETE \
 }
 ```
 
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful   | API 호출 성공 여부 | 
-| header.resultCode     | API 호출 결과 코드 |
-| header.resultMessage  | API 호출 결과 메세지|  
-| body[].targetId       | 수집 대상 ID      | 
-| body[].jobId          | 작업 공간 ID      | 
-| body[].hostId         | 수집 대상 호스트 ID | 
-| body[].port           | 수집 대상 포트 번호   | 
-| body[].resultCd       | 수집 대상 연결 결과 코드| 
-| body[].failReason     | 수집 대상 연결 실패 이유| 
-| body[].mntrnStatCd    | 수집 대상 모니터링 상태 코드| 
-| body[].lstModifier    | 최근 수정자 UUID   |  
-| body[].lstModYmdt     | 최근 수정 일자      |  
-| body[].hostNm         | 수집 대상 이름     |  
-| body[].svrIp          | 수집 대상 IP      |  
-
 ### 2. OpenMetrics 대시보드 수집 대상 서버 조회
 
 [URL]
@@ -543,7 +543,20 @@ curl -i -X DELETE \
 
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful   | API 호출 성공 여부 | 
+| header.resultCode     | API 호출 결과 코드 |
+| header.resultMessage  | API 호출 결과 메세지|  
+| body[].hostId        | 호스트 ID        | 
+| body[].hostNm        | 호스트 이름       | 
+| body[].projectId     | 프로젝트 ID      | 
+| body[].svrIp         | 서버 IP        | 
+| body[].instanceId    | 인스턴스 ID       | 
+
+[예시]
 ```
 {
    "header":{
@@ -562,19 +575,6 @@ curl -i -X DELETE \
    ]
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful   | API 호출 성공 여부 | 
-| header.resultCode     | API 호출 결과 코드 |
-| header.resultMessage  | API 호출 결과 메세지|  
-| body[].hostId        | 호스트 ID        | 
-| body[].hostNm        | 호스트 이름       | 
-| body[].projectId     | 프로젝트 ID      | 
-| body[].svrIp         | 호스트 ID        | 
-| body[].instanceId    | 인스턴스 ID       | 
 
 ### 3. OpenMetrics 대시보드 수집 대상 생성
 
@@ -595,7 +595,7 @@ curl -i -X DELETE \
 
 | 키 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트ID 입니다. |
+| hostId        | 수집 대상으로 추가할 호스트 ID| O | /v1.0/projects/{projectId}/servers로 조회한 호스트 ID 입니다. |
 | port          | 수집 대상 PORT    | O |  |
 
 [오류 코드]
@@ -620,7 +620,16 @@ curl -i -X POST \
 
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful | API 호출 성공 여부 | 
+| header.resultCode   | API 호출 결과 코드 |
+| header.resultMessage| API 호출 결과 메세지|  
+| body                | 생성된 수집 대상 ID | 
+
+[예시]
 ```
 {
    "header":{
@@ -631,15 +640,6 @@ curl -i -X POST \
    "body": "targetId"
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful | API 호출 성공 여부 | 
-| header.resultCode   | API 호출 결과 코드 |
-| header.resultMessage| API 호출 결과 메세지|  
-| body                | 생성된 수집 대상 ID | 
 
 ### 4. OpenMetrics 대시보드 수집 대상 개별 조회
 
@@ -662,7 +662,26 @@ curl -i -X POST \
 
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful | API 호출 성공 여부 | 
+| header.resultCode   | API 호출 결과 코드 |
+| header.resultMessage| API 호출 결과 메세지|  
+| body.targetId       | 수집 대상 ID      | 
+| body.jobId          | 작업 공간 ID      | 
+| body.hostId         | 수집 대상 호스트 ID | 
+| body.port           | 수집 대상 포트 번호   | 
+| body.resultCd       | 수집 대상 연결 결과 코드| 
+| body.failReason     | 수집 대상 연결 실패 이유|
+| body.mntrnStatCd    | 모니터링 상태 코드    | 
+| body.lstModifier    | 최근 수정자 UUID   |  
+| body.lstModYmdt     | 최근 수정 일자      |  
+| body.hostNm         | 수집 대상 이름     |  
+| body.svrIp          | 수집 대상 IP      |  
+
+[예시]
 ```
 {
     "header":{
@@ -685,25 +704,6 @@ curl -i -X POST \
    }
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful | API 호출 성공 여부 | 
-| header.resultCode   | API 호출 결과 코드 |
-| header.resultMessage| API 호출 결과 메세지|  
-| body.targetId       | 수집 대상 ID      | 
-| body.jobId          | 작업 공간 ID      | 
-| body.hostId         | 수집 대상 호스트 ID | 
-| body.port           | 수집 대상 포트 번호   | 
-| body.resultCd       | 수집 대상 연결 결과 코드| 
-| body.failReason     | 수집 대상 연결 실패 이유|
-| body.mntrnStatCd    | 모니터링 상태 코드    | 
-| body.lstModifier    | 최근 수정자 UUID   |  
-| body.lstModYmdt     | 최근 수정 일자      |  
-| body.hostNm         | 수집 대상 이름     |  
-| body.svrIp          | 수집 대상 IP      |  
 
 ### 5. OpenMetrics 대시보드 수집 대상 삭제
 
@@ -735,7 +735,16 @@ curl -i -X DELETE \
 
 ```
 
-#### 결과
+#### 응답
+
+| 키 | 설명|
+| --- | --- |
+| header.isSuccessful | API 호출 성공 여부 | 
+| header.resultCode   | API 호출 결과 코드 |
+| header.resultMessage| API 호출 결과 메세지|  
+| body                | 삭제된 수집 대상 ID | 
+
+[예시]
 ```
 {
    "header":{
@@ -746,12 +755,3 @@ curl -i -X DELETE \
    "body": "targetId"
 }
 ```
-
-[Response Body]
-
-| 키 | 설명|
-| --- | --- |
-| header.isSuccessful | API 호출 성공 여부 | 
-| header.resultCode   | API 호출 결과 코드 |
-| header.resultMessage| API 호출 결과 메세지|  
-| body                | 삭제된 수집 대상 ID | 
