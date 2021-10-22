@@ -72,7 +72,7 @@ For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/
 
 #### Available Endpoints
 
-| Metheod | endpoint |
+| Method | endpoint |
 | --- | --- |
 | GET | /prometheus/api/v1/query |
 | POST | /prometheus/api/v1/query |
@@ -138,7 +138,23 @@ curl -i -X GET \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful   | Whether the API call was successful | 
+| header.resultCode     | API call result code |
+| header.resultMessage  | API call result message|  
+| body[].jobId          | Workspace ID      | 
+| body[].projectId      | Project ID      |
+| body[].jobName        | Workspace name     |  
+| body[].metricsPath    | Workspace URL path | 
+| body[].description    | Workspace description     |
+| body[].lstModifier    | Last modifier's UUID   |  
+| body[].lstModYmdt     | Last modified date      |  
+| body[].reservedJobCd  | Workspace creation type (if null, the user creates the workspace manually)  |  
+
+[Example]
 ```
 {
     "header":{
@@ -160,22 +176,6 @@ curl -i -X GET \
    ]
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful   | Whether the API call was successful | 
-| header.resultCode     | API call result code |
-| header.resultMessage  | API call result message|  
-| body[].jobId          | Workspace ID      | 
-| body[].projectId      | Project ID      |
-| body[].jobName        | Workspace name     |  
-| body[].metricsPath    | Workspace URL path | 
-| body[].description    | Workspace description     |
-| body[].lstModifier    | Last modifier's UUID   |  
-| body[].lstModYmdt     | Last modified date      |  
-| body[].reservedJobCd  | Workspace creation type (if null, the user creates the workspace manually)  |  
 
 ### 2. Create an OpenMetrics dashboard workspace
 
@@ -222,7 +222,23 @@ curl -i -X POST \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs'
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful  | Whether the API call was successful | 
+| header.resultCode    | API call result code |
+| header.resultMessage | API call result message|  
+| body.jobId           | Created workspace ID      | 
+| body.projectId       | Project ID      |
+| body.jobName         | Created workspace name     |  
+| body.metricsPath     | Created Workspace URL Path | 
+| body.description     | Created workspace description     |
+| body.lstModifier     | Last modifier's UUID   |  
+| body.lstModYmdt      | Last modified date      |  
+| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
+
+[Example]
 ```
 {
     "header":{
@@ -242,22 +258,6 @@ curl -i -X POST \
    }
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful  | Whether the API call was successful | 
-| header.resultCode    | API call result code |
-| header.resultMessage | API call result message|  
-| body.jobId           | Created workspace ID      | 
-| body.projectId       | Project ID      |
-| body.jobName         | Created workspace name     |  
-| body.metricsPath     | Created Workspace URL Path | 
-| body.description     | Created workspace description     |
-| body.lstModifier     | Last modifier's UUID   |  
-| body.lstModYmdt      | Last modified date      |  
-| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
 
 ### 3. Query an individual OpenMetrics dashboard workspace
 
@@ -279,7 +279,23 @@ curl -i -X GET \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/{projectId}/jobs/{jobId}'
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful  | Whether the API call was successful | 
+| header.resultCode    | API call result code |
+| header.resultMessage | API call result message|  
+| body.jobId           | Workspace ID      | 
+| body.projectId       | Project ID      |
+| body.jobName         | Workspace name     |  
+| body.metricsPath     | Workspace URL path | 
+| body.description     | Workspace description     |
+| body.lstModifier     | Last modifier's UUID   |  
+| body.lstModYmdt      | Last modified date      |  
+| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
+
+[Example]
 ```
 {
     "header":{
@@ -299,22 +315,6 @@ curl -i -X GET \
    }
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful  | Whether the API call was successful | 
-| header.resultCode    | API call result code |
-| header.resultMessage | API call result message|  
-| body.jobId           | Workspace ID      | 
-| body.projectId       | Project ID      |
-| body.jobName         | Workspace name     |  
-| body.metricsPath     | Workspace URL path | 
-| body.description     | Workspace description     |
-| body.lstModifier     | Last modifier's UUID   |  
-| body.lstModYmdt      | Last modified date      |  
-| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
 
 ### 4. Modify the OpenMetrics dashboard workspace
 
@@ -359,7 +359,23 @@ curl -i -X PUT \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful  | Whether the API call was successful | 
+| header.resultCode    | API call result code |
+| header.resultMessage | API call result message|  
+| body.jobId           | Workspace ID      | 
+| body.projectId       | Project ID      |
+| body.jobName         | Workspace name     |  
+| body.metricsPath     | Modified workspace URL Path | 
+| body.description     | Modified workspace description     |
+| body.lstModifier     | Last modifier's UUID   |  
+| body.lstModYmdt      | Last modified date      |  
+| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
+
+[Example]
 ```
 {
    "header":{
@@ -379,22 +395,6 @@ curl -i -X PUT \
    }
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful  | Whether the API call was successful | 
-| header.resultCode    | API call result code |
-| header.resultMessage | API call result message|  
-| body.jobId           | Workspace ID      | 
-| body.projectId       | Project ID      |
-| body.jobName         | Workspace name     |  
-| body.metricsPath     | Modified workspace URL Path | 
-| body.description     | Modified workspace description     |
-| body.lstModifier     | Last modifier's UUID   |  
-| body.lstModYmdt      | Last modified date      |  
-| body.reservedJobCd   | Workspace creation type (if null, the user creates the workspace manually)  |  
 
 ### 5. Delete the OpenMetrics Dashboard workspace
 
@@ -424,7 +424,16 @@ curl -i -X DELETE \
  'https://kr1-api-sysmon.cloud.toast.com/v1.0/projects/aOpreudC/jobs/{jobId}'
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful  | Whether the API call was successful | 
+| header.resultCode    | API call result code |
+| header.resultMessage | API call result message|  
+| body                 | Deleted workspace ID | 
+
+[Example]
 ```
 {
    "header":{
@@ -435,15 +444,6 @@ curl -i -X DELETE \
    "body": "jobId"
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful  | Whether the API call was successful | 
-| header.resultCode    | API call result code |
-| header.resultMessage | API call result message|  
-| body                 | Deleted workspace ID | 
 
 ## OpenMetrics Dashboard Collection Target API
 - You can use the API to query, create, and delete collection targets of the OpenMetrics dashboard.
@@ -475,7 +475,26 @@ curl -i -X DELETE \
 
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful   | Whether the API call was successful | 
+| header.resultCode     | API call result code |
+| header.resultMessage  | API call result message|  
+| body[].targetId       | Collection target ID      | 
+| body[].jobId          | Workspace ID      | 
+| body[].hostId         | Collection target host ID | 
+| body[].port           | Collection target port number   | 
+| body[].resultCd       | Collection target connection result code| 
+| body[].failReason     | Reason for failure to connect to a collection target| 
+| body[].mntrnStatCd    | Collection target monitoring status code| 
+| body[].lstModifier    | Last modifier's UUID   |  
+| body[].lstModYmdt     | Last modified date      |  
+| body[].hostNm         | Collection target name     |  
+| body[].svrIp          | Collection target IP      |  
+
+[Example]
 ```
 {
     "header":{
@@ -501,25 +520,6 @@ curl -i -X DELETE \
 }
 ```
 
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful   | Whether the API call was successful | 
-| header.resultCode     | API call result code |
-| header.resultMessage  | API call result message|  
-| body[].targetId       | Collection target ID      | 
-| body[].jobId          | Workspace ID      | 
-| body[].hostId         | Collection target host ID | 
-| body[].port           | Collection target port number   | 
-| body[].resultCd       | Collection target connection result code| 
-| body[].failReason     | Reason for failure to connect to a collection target| 
-| body[].mntrnStatCd    | Collection target monitoring status code| 
-| body[].lstModifier    | Last modifier's UUID   |  
-| body[].lstModYmdt     | Last modified date      |  
-| body[].hostNm         | Collection target name     |  
-| body[].svrIp          | Collection target IP      |  
-
 ### 2. Query an OpenMetrics dashboard collection target server
 
 [URL]
@@ -543,7 +543,20 @@ curl -i -X DELETE \
 
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful   | Whether the API call was successful | 
+| header.resultCode     | API call result code |
+| header.resultMessage  | API call result message|  
+| body[].hostId        | Host ID        | 
+| body[].hostNm        | Hostname       | 
+| body[].projectId     | Project ID      | 
+| body[].svrIp         | Server IP        | 
+| body[].instanceId    | Instance ID       | 
+
+[Example]
 ```
 {
    "header":{
@@ -562,19 +575,6 @@ curl -i -X DELETE \
    ]
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful   | Whether the API call was successful | 
-| header.resultCode     | API call result code |
-| header.resultMessage  | API call result message|  
-| body[].hostId        | Host ID        | 
-| body[].hostNm        | Hostname       | 
-| body[].projectId     | Project ID      | 
-| body[].svrIp         | Host ID        | 
-| body[].instanceId    | Instance ID       | 
 
 ### 3. Create an OpenMetrics dashboard collection target
 
@@ -595,7 +595,7 @@ curl -i -X DELETE \
 
 | Key | Value | Required | Note|
 | --- | --- | --- | --- |
-| hostId        | Host ID to add as a collection target| O | This is the host ID queried with /v1.0/projects/{projectId}/servers. |
+| hostId        | Host ID to add as a collection target| O | Host ID retrieved by /v1.0/projects/{projectId}/servers. |
 | port          | Collection target PORT    | O |  |
 
 [Error Codes]
@@ -620,7 +620,16 @@ curl -i -X POST \
 
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful | Whether the API call was successful | 
+| header.resultCode   | API call result code |
+| header.resultMessage| API call result message|  
+| body                | Generated collection target ID | 
+
+[Example]
 ```
 {
    "header":{
@@ -631,15 +640,6 @@ curl -i -X POST \
    "body": "targetId"
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful | Whether the API call was successful | 
-| header.resultCode   | API call result code |
-| header.resultMessage| API call result message|  
-| body                | Generated collection target ID | 
 
 ### 4. Query an individual OpenMetrics dashboard collection target
 
@@ -662,7 +662,26 @@ curl -i -X POST \
 
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful | Whether the API call was successful | 
+| header.resultCode   | API call result code |
+| header.resultMessage| API call result message|  
+| body.targetId       | Collection target ID      | 
+| body.jobId          | Workspace ID      | 
+| body.hostId         | Collection target host ID | 
+| body.port           | Collection target port number   | 
+| body.resultCd       | Collection target connection result code| 
+| body.failReason     | Reason for failure to connect to a collection target|
+| body.mntrnStatCd    | Monitoring status code    | 
+| body.lstModifier    | Last modifier's UUID   |  
+| body.lstModYmdt     | Last modified date      |  
+| body.hostNm         | Collection target name     |  
+| body.svrIp          | Collection target IP      |  
+
+[Example]
 ```
 {
     "header":{
@@ -685,25 +704,6 @@ curl -i -X POST \
    }
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful | Whether the API call was successful | 
-| header.resultCode   | API call result code |
-| header.resultMessage| API call result message|  
-| body.targetId       | Collection target ID      | 
-| body.jobId          | Workspace ID      | 
-| body.hostId         | Collection target host ID | 
-| body.port           | Collection target port number   | 
-| body.resultCd       | Collection target connection result code| 
-| body.failReason     | Reason for failure to connect to a collection target|
-| body.mntrnStatCd    | Monitoring status code    | 
-| body.lstModifier    | Last modifier's UUID   |  
-| body.lstModYmdt     | Last modified date      |  
-| body.hostNm         | Collection target name     |  
-| body.svrIp          | Collection target IP      |  
 
 ### 5. Delete an OpenMetrics dashboard collection target
 
@@ -735,7 +735,16 @@ curl -i -X DELETE \
 
 ```
 
-#### Result
+#### Response
+
+| Key | Description|
+| --- | --- |
+| header.isSuccessful | Whether the API call was successful | 
+| header.resultCode   | API call result code |
+| header.resultMessage| API call result message|  
+| body                | Deleted collection target ID | 
+
+[Example]
 ```
 {
    "header":{
@@ -746,12 +755,3 @@ curl -i -X DELETE \
    "body": "targetId"
 }
 ```
-
-[Response Body]
-
-| Key | Description|
-| --- | --- |
-| header.isSuccessful | Whether the API call was successful | 
-| header.resultCode   | API call result code |
-| header.resultMessage| API call result message|  
-| body                | Deleted collection target ID | 
