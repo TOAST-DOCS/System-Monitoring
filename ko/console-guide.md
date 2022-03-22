@@ -4,9 +4,6 @@
 - 사용자 그룹
 - 알림 그룹
 
-## 동영상 가이드
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G1mQTC_pNAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## 서버 대시보드
 **Compute > System Monitoring > 서버 대시보드**에서는 모니터링 대상 인스턴스 목록과 기본 지표 차트를 확인할 수 있습니다.
 만약 모니터링할 수 있는 서버가 없을 때는 서버 목록이 비어 있습니다.
