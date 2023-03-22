@@ -4,7 +4,7 @@ The console user guide provides basics of how to use System Monitoring.
 - User Group
 - Notify Group
 
-## Server dashboard
+## Server Dashboard
 **Compute > System Monitoring > Server Dashboard** allows you to view the list of instances to be monitored and the basic metric chart.
 If there is no server to monitor, the server list is empty.
 In this case, you must make sure that those instances being used under **Compute > Instance** are working properly or the System Monitoring Agent has been installed in the instances to be monitored and is working properly. For how to install the Agent, please see the section **How to Install Agent**.
@@ -33,8 +33,8 @@ Since 'Default Layout' is a layout provided by System Monitoring by default, use
 ### Create Layout
 To add a new metric or make your own chart placement, you need a new layout. To create a layout, click the **Create Layout** button at the top of the server dashboard. Up to five layouts can be created for each project.
 
-
 Enter the name in the **Create Layout** window and then click the **Create** button to create a new layout. An empty screen appears since there is no registered chart. To add a new chart, click the **Add Chart** button by following the on-screen guide.
+
 ### Create Chart
 Click the **Add Chart** button to display the list of selectable metrics.
 
@@ -166,6 +166,22 @@ At the top, specify the server to apply the monitoring setting specified in the 
 
 Now you can look up the Notify Group list from **Compute > System Monitoring > Notify Group**.
 
+## Monthly Metrics Report
+You can find monthly metrics reports from **Compute > System Monitoring > Monthly Metrics Report**.
+
+### GENERAL Report Type
+* Monthly metrics report is created based on **Server Dashboard**.
+* You can select one or more metrics among **Average CPU**, **Maximum CPU**, **Average Memory**, **Maximum Memory**, **Outbound Network**, **Inbound Network**, and **File System Usage**.
+* You can select one of **5m**, **30m**, **2h**, and **1D**, and the value of **Month** you can select depends on the selected interval (You can select up to 6 months in advance).
+* Click **Request Download** to request report creation. The created list can be found in **Report Generation Request Status**.
+  * Report generation is asynchronous and cannot be downloaded until generation is complete.
+
+### PROMQL Report Type
+* Monthly metrics report is created based on **OpenMetrics Dashboard**.
+* Metrics use PROMQL queries, the same one used by the charts in the **OpenMetrics Dashboard**, detailed examples can be found [https://prometheus.io/docs/prometheus/latest/querying/basics/](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+* You can select one of **5m**, **30m**, **2h**, and **1D**, and the value of **Month** you can select depends on the selected interval (You can select up to 6 months in advance).
+* Click **Request Download** to request report creation. The created list can be found in **Report Generation Request Status**.
+   * Report generation is asynchronous and cannot be downloaded until generation is complete.
 
 ## How to Install Agents
 
