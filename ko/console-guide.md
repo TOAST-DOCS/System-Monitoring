@@ -208,7 +208,7 @@ Linux와 Windows에 Agent를 설치하는 방법은 다음과 같습니다.
 3. 확인 결과 파일이 없다면 아래 링크에서 다운로드합니다.
     * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
 
-4. 서버에서 `toast-sysmon-install.ps1`파일을 마우스 오른쪽 버튼으로 클릭한 뒤 `PowerShell 스크립트로 실행`을 선택하면 설치 과정이 처음부터 이루어지며 Windows 서비스로 등록 됩니다.
+4. 서버에서 `toast-sysmon-install.ps1`파일을 마우스 오른쪽 버튼으로 클릭한 뒤 `PowerShell 스크립트로 실행`을 선택하면 설치 과정이 처음부터 이루어지며 Windows 서비스로 등록됩니다.
     * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_install.png)
 5. 설치가 완료되면 자동으로 모니터링이 시작됩니다.
 
