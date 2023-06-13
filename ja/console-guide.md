@@ -211,5 +211,19 @@ https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-ins
     * 2番で確認したファイルがない場合は、下記のリンクからダウンロードしてください。
 https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
 
-4. サーバーでインストールスクリプトを実行
-    * サーバーでインストールスクリプトを実行します。インストールが完了したら、自動的にモニタリングが始まります。
+4. サーバーで`toast-sysmon-install.ps1`ファイルを右クリックして`PowerShellスクリプトで実行`を選択すると、インストールプロセスが最初から行われ、Windowsサービスとして登録されます。
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_install.png)
+5. インストールが完了すると、自動的にモニタリングが開始されます。
+
+#### Windows Agentの動作確認
+1. WindowsタスクマネージャーでAgentの動作有無を確認します。
+2. Windowsタスクマネージャーの`詳細`タブで`toastmon.exe`が動作しているかどうかを確認します。
+   * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_task_manager.png)
+
+#### Windows Agentの再インストール
+   * Windows Agentを再インストールするには、既にインストールされているAgentを削除してから再インストールする必要があります。
+
+#### Windows Agentの削除
+1. C:\Program Files (x86)\NHN\TOASTにAgent関連ファイルがあります。
+2. Agentを削除するために、C:\Program Files (x86)\NHN\TOASTの`uninst.exe`を実行します。
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_uninstall.png)
