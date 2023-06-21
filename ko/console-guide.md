@@ -208,4 +208,19 @@ Linux와 Windows에 Agent를 설치하는 방법은 다음과 같습니다.
 3. 확인 결과 파일이 없다면 아래 링크에서 다운로드합니다.
     * https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
 
-4. 서버에서 설치 스크립트를 실행합니다. 설치가 완료되면 자동으로 모니터링이 시작됩니다.
+4. 서버에서 `toast-sysmon-install.ps1`파일을 마우스 오른쪽 버튼으로 클릭한 뒤 `PowerShell 스크립트로 실행`을 선택하면 설치 과정이 처음부터 이루어지며 Windows 서비스로 등록됩니다.
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_install.png)
+5. 설치가 완료되면 자동으로 모니터링이 시작됩니다.
+
+#### Windows Agent 동작 확인
+1. Windows 작업 관리자에서 Agent의 동작 여부를 확인합니다.
+2. Windows 작업 관리자의 `세부 정보` 탭에서 `toastmon.exe`의 동작 여부를 확인합니다.
+   * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_task_manager.png)
+
+#### Windows Agent 재설치
+   * Windows Agent를 재설치하려면 이미 설치되어 있는 Agent를 삭제한 뒤 재설치해야 합니다.
+
+#### Windows Agent 삭제
+1. C:\Program Files (x86)\NHN\TOAST에 Agent 관련 파일이 위치합니다.
+2. Agent 삭제를 위해 C:\Program Files (x86)\NHN\TOAST의 `uninst.exe`를 실행합니다.
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_uninstall.png)
