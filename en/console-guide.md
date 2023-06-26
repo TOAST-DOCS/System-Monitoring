@@ -207,6 +207,17 @@ https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-ins
     * If there is no file from no.2, download one from the following link:
 https://static.toastoven.net/toastcloud/sdk_download/monitoring/toast-sysmon-install.ps1
 
-4. Execute Installation Script in Server
-    * With installation script executed and installed on the server, monitoring shall begin automatically. 
+4. If you right-click the `toast-sysmon-install.ps1` file to select **Run in PowerShell**, the installation starts from scratch and the file is registered as a Windows service.
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_install.png)
+5. Monitoring starts automatically after installation is complete.
 
+#### Check Windows Agent Operation
+1. Check that the Agent is running in Windows Task Manager.
+2. Check that the `toastmon.exe` file is running in the `Details` tab of Windows Task Manager.
+    * ![WindowsAgent](https://static.toastoven.net/prod_system_monitoring/console_guide/guide_agent_task_manager.png)
+
+#### Reinstall Windows Agent
+    * To reinstall Windows Agent, delete and reinstall the already installed Agent.
+
+#### Delete Windows Agent
+1. Agent-related files are located in C:\Program Files (x86)\NHN\TOAST.
