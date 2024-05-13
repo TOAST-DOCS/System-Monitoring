@@ -1,5 +1,5 @@
-## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > 개요
-**Compute > System Monitoring > Advanced Monitoring(OpenMetrics)** 서비스는 사용자의 인스턴스에서 동작하는 다양한 플랫폼과 애플리케이션을 모니터링할 수 있는 확장 모니터링 도구입니다.
+## Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics) > 개요
+**Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics)** 서비스는 사용자의 인스턴스에서 동작하는 다양한 플랫폼과 애플리케이션을 모니터링할 수 있는 확장 모니터링 도구입니다.
 기본적인 시스템 지표 외에도 사용자의 상황에 필요한 여러 지표를 수집할 수 있는 방법을 소개합니다.
 
 ## Prometheus 소개

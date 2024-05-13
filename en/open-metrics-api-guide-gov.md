@@ -1,4 +1,4 @@
-## Compute > System Monitoring > API Guide
+## Monitoring > System Monitoring > API Guide
 
 ### Basic information
 http API Endpoint
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 ```
 curl "https://gov-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'X-TC-APP-KEY:appkey'
@@ -98,7 +98,7 @@ For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/
 ![Grafana](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guidefile.png)
 - In the window where Prometheus is selected, enter Name, URL, and Header in order.
 - For URL, you must enter the address of the API Gateway (for example, gov-api-sysmon.cloud.toast.com) followed by the prefix to use the Prometheus API (/prometheus). (For example, https://gov-api-sysmon.cloud.toast.com/prometheus)
-- For Header, enter x-tc-app-key as the key. For Value, enter the appkey of the System Monitoring product. (You can check the appkey from the URL & Appkey in the upper right corner of Compute > System Monitoring.)
+- For Header, enter x-tc-app-key as the key. For Value, enter the appkey of the System Monitoring product. (You can check the appkey from the URL & Appkey in the upper right corner of Monitoring > System Monitoring.)
 - Click the Save & test button at the bottom and check if "Data source is working" is displayed normally.
 - When you return to the main screen, you can see that the newly created data source has been added to the list.
 
@@ -125,7 +125,7 @@ For more information, refer to [Prometheus HTTP API](https://prometheus.io/docs/
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 | X-SYSMON-REGION | regionCode    | O | Enter the code of the region you want to query. (kr) |
 
 ```
@@ -186,7 +186,7 @@ curl -i -X GET \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 | X-SYSMON-REGION | regionCode    | O | Enter the code of the region where you want to create a workspace. (kr) |
 | Content-Type    | content Type  | O | application/json |
 
@@ -268,7 +268,7 @@ curl -i -X POST \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 ```
 curl -i -X GET \
@@ -325,7 +325,7 @@ curl -i -X GET \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -405,7 +405,7 @@ curl -i -X PUT \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 [Error Codes]
 
@@ -463,7 +463,7 @@ curl -i -X DELETE \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 ```
  curl -i -X GET \
@@ -529,7 +529,7 @@ curl -i -X DELETE \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 | X-SYSMON-REGION | regionCode    | O | Enter the code of the region you want to query. (kr) |
 
 ```
@@ -585,7 +585,7 @@ curl -i -X DELETE \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -650,7 +650,7 @@ curl -i -X POST \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 ```
  curl -i -X GET \
@@ -714,7 +714,7 @@ curl -i -X POST \
 
 | Header name | Value | Required | Note|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Compute > System Monitoring. |
+| X-TC-APP-KEY    | projectAppkey | O | You can check it from the URL & Appkey in the upper right corner of Monitoring > System Monitoring. |
 
 [Error Codes]
 
