@@ -1,4 +1,4 @@
-## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > Overview
+## Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics) > Overview
 The Advanced Monitoring(OpenMetrics) service is an extension monitoring tool that allows users to monitor various platforms and applications running on their instances.
 Other than basic system metrics, there are also other ways to collect different metrics for users' varied situation.
 

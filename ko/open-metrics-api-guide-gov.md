@@ -1,4 +1,4 @@
-## Compute > System Monitoring > API 가이드
+## Monitoring > System Monitoring > API 가이드
 
 ### 기본 정보
 http API Endpoint
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
 curl "https://gov-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'X-TC-APP-KEY:appkey'
@@ -98,7 +98,7 @@ curl "https://gov-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 ![Grafana](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guidefile.png)
 - Prometheus를 선택한 창에서 차례대로 Name, URL, Header를 입력합니다.
 - 이때 URL은 API Gateway의 주소(예: gov-api-sysmon.cloud.toast.com)에 Prometheus API를 이용하기 위한 prefix(/prometheus)까지 입력합니다. (예: https://gov-api-sysmon.cloud.toast.com/prometheus) 
-- Header 값에는 key로 x-tc-app-key를, Value에는 System Monitoring 상품의 appkey를 넣습니다. (Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다.)
+- Header 값에는 key로 x-tc-app-key를, Value에는 System Monitoring 상품의 appkey를 넣습니다. (Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다.)
 - 맨 하단의 Save & test 버튼을 누르고 "Data source is working"이 정상적으로 표시되는지 확인합니다.
 - 메인 화면으로 돌아가면 목록에 새로 만든 data source가 추가된 것을 확인할 수 있습니다.
 
@@ -125,7 +125,7 @@ curl "https://gov-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다.(kr) |
 
 ```
@@ -186,7 +186,7 @@ curl -i -X GET \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | X-SYSMON-REGION | regionCode    | O | 작업 공간을 생성하고자 하는 region의 코드를 입력합니다.(kr) |
 | Content-Type    | content Type  | O | application/json |
 
@@ -268,7 +268,7 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
 curl -i -X GET \
@@ -325,7 +325,7 @@ curl -i -X GET \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -405,7 +405,7 @@ curl -i -X PUT \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 [오류 코드]
 
@@ -463,7 +463,7 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
  curl -i -X GET \
@@ -529,7 +529,7 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | X-SYSMON-REGION | regionCode    | O | 조회하고자 하는 region의 코드를 입력합니다.(kr) |
 
 ```
@@ -585,7 +585,7 @@ curl -i -X DELETE \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -650,7 +650,7 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 ```
  curl -i -X GET \
@@ -714,7 +714,7 @@ curl -i -X POST \
 
 | 헤더 이름 | 값 | 필수 | 비고|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoring의 우측 상단 URL & Appkey에서 확인 가능합니다. |
 
 [오류 코드]
 

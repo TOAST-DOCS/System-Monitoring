@@ -1,4 +1,4 @@
-## Compute > System Monitoring > APIガイド
+## Monitoring > System Monitoring > APIガイド
 
 ### 基本情報
 
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 ```
 curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=query&start=1621894796&end=1621905566" -v -H'x-tc-app-key:appkey'
@@ -102,7 +102,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 ![Grafana](https://static.toastoven.net/prod_system_monitoring/console_guide/grafana_guidefile.png)
 - Prometheusを選択したウィンドウでName、URL、Headerを順番に入力します。
 - この時、URLはAPI Gatewayのアドレス(例：kr1-api-sysmon.cloud.toast.com)にPrometheus APIを利用するためのprefix(/prometheus)まで入力します。 (例：https://kr1-api-sysmon.cloud.toast.com/prometheus) 
-- Header値にはkeyでx-tc-app-keyを、ValueにはSystem Monitoring商品のappkeyを入れます。(Compute > System Monitoringの右上のURL & Appkeyで確認できます。)
+- Header値にはkeyでx-tc-app-keyを、ValueにはSystem Monitoring商品のappkeyを入れます。(Monitoring > System Monitoringの右上のURL & Appkeyで確認できます。)
 - 一番下のSave & testボタンを押して"Data source is working"が正常に表示されるか確認します。
 - メイン画面に戻ると、リストに新たに作成したdata sourceが追加されていることを確認できます。
 
@@ -129,7 +129,7 @@ curl "https://kr1-api-sysmon.cloud.toast.com/prometheus/api/v1/series?match[]=qu
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 | X-SYSMON-REGION | regionCode    | O | 照会したいregionのコードを入力します。(kr、kr2、jp、us) |
 
 ```
@@ -190,7 +190,7 @@ curl -i -X GET \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 | X-SYSMON-REGION | regionCode    | O | ワークスペースを作成したいregionのコードを入力します。(kr, kr2, jp, us) |
 | Content-Type    | content Type  | O | application/json |
 
@@ -272,7 +272,7 @@ curl -i -X POST \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 ```
 curl -i -X GET \
@@ -329,7 +329,7 @@ curl -i -X GET \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -409,7 +409,7 @@ curl -i -X PUT \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 [エラーコード]
 
@@ -467,7 +467,7 @@ curl -i -X DELETE \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 ```
  curl -i -X GET \
@@ -589,7 +589,7 @@ curl -i -X DELETE \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 | Content-Type    | content Type  | O | application/json |
 
 [Request Body]
@@ -654,7 +654,7 @@ curl -i -X POST \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 ```
  curl -i -X GET \
@@ -718,7 +718,7 @@ curl -i -X POST \
 
 | ヘッダ名 | 値 | 必須 | 備考|
 | --- | --- | --- | --- |
-| X-TC-APP-KEY    | projectAppkey | O | Compute > System Monitoringの右上にあるURL & Appkeyで確認可能 |
+| X-TC-APP-KEY    | projectAppkey | O | Monitoring > System Monitoringの右上にあるURL & Appkeyで確認可能 |
 
 [エラーコード]
 
