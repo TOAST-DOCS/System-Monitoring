@@ -1,9 +1,9 @@
 ## Monitoring > System Monitoring > 릴리즈 노트
 
 ## 2024. 05. 28.
-### 기능 개선/변경
-* 서비스 카테고리 변경
-  * Compute에서 Monitoring으로 카테고리가 변경되었습니다.
+### Feature Updates
+* Changed Service Category
+  * Changed the Category from Compute to Monitoring.
 
 ### 2023. 10. 31.
 
