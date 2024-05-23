@@ -1,7 +1,7 @@
-## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > Console Guide
+## Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics) > Console Guide
 
 Console Guide describes what are required to use Advanced Monitoring(OpenMetrics).
-In **Compute > System Monitoring > OpenMetrics Dashboard**, you can define monitoring workspace and specify the collection target to collect random metrics that complies with the Exporter or its format.
+In **Monitoring > System Monitoring > OpenMetrics Dashboard**, you can define monitoring workspace and specify the collection target to collect random metrics that complies with the Exporter or its format.
 Collected metrics can be checked by configuring a chart in a similar way as Server Dashboard.
 
 ## Workspace
@@ -63,7 +63,7 @@ Status value is distinguished by color. For all collections except normal collec
 | Grey   | Preparing collection (right after collection targets are registered or the instance is stopped) |
 
 > If the grey color does not change even after a while, please update the Agent with the latest version.
-> ([How to install the Agent](https://docs.toast.com/en/Compute/System%20Monitoring/en/console-guide/#agent))
+> ([How to install the Agent](https://docs.toast.com/en/Monitoring/System%20Monitoring/en/console-guide/#agent))
 > If there is no change even after updating, please contact our Customer Center.
 
 ### Delete Collection Target

@@ -1,11 +1,11 @@
-## Compute > System Monitoring > Overview
-**Compute > System Monitoring** Service provides monitoring feature for the instances created by users in **Instance**.
+## Monitoring > System Monitoring > Overview
+**Monitoring > System Monitoring** Service provides monitoring feature for the instances created by users in **Instance**.
 You can view the system resource status of the instance in a chart form. You can set a usage threshold to receive a notification upon reaching a specific state via email or SMS.
 
 System Monitoring collects system metrics to the System Monitoring Agent installed on each instance server. 
 Since the Agent is included in the image of the instance by default, it starts collecting them when the instance is started.
 However, for the instances which was created before July 23, 2019, which was the release date of System Monitoring service, an Agent should be installed separately.
-To install the Agent, see **Compute > System Monitoring > Console Guide > How to Install Agent**.
+To install the Agent, see **Monitoring > System Monitoring > Console Guide > How to Install Agent**.
 
 ## Provided Features
 ### System metric dashboard provided

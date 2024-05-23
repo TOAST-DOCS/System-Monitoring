@@ -1,11 +1,11 @@
-## Management > System Monitoring > Console User Guide
+## Monitoring > System Monitoring > Console User Guide
 The console user guide provides basics of how to use System Monitoring.
 - Server Dashboard
 - User Group
 - Notify Group
 
 ## Server Dashboard
-**Compute > System Monitoring > Server Dashboard** allows you to view the list of instances to be monitored and the basic metric chart.
+**Monitoring > System Monitoring > Server Dashboard** allows you to view the list of instances to be monitored and the basic metric chart.
 If there is no server to monitor, the server list is empty.
 In this case, you must make sure that those instances being used under **Compute > Instance** are working properly or the System Monitoring Agent has been installed in the instances to be monitored and is working properly. For how to install the Agent, please see the section **How to Install Agent**.
 
@@ -27,7 +27,7 @@ Hover mouse over the status indicator to view the status value of the instance a
 By default, the server instance deleted from **Compute > Instance** is not displayed in the server list of the server dashboard. However, the metric data is not deleted but retained. To view the metric of the deleted instance, select **View Also Deleted Servers**.
 
 ### Default Layout
-The chart layout that first shows on **Compute > System Monitoring > Server Dashboard** is the **Default Layout**. This default layout can be used without any further settings. It shows **CPU Usage**, **Memory Usage**, and **Disk Usage**, **Network I/O Rate** charts.
+The chart layout that first shows on **Monitoring > System Monitoring > Server Dashboard** is the **Default Layout**. This default layout can be used without any further settings. It shows **CPU Usage**, **Memory Usage**, and **Disk Usage**, **Network I/O Rate** charts.
 Since 'Default Layout' is a layout provided by System Monitoring by default, user cannot configure it by himself or herself.
 
 ### Create Layout
@@ -62,18 +62,18 @@ Second, you can use a hotkey. Below each date button, there are separately place
 Aside from the date selection window, there is another way of selecting the date range. You can directly select a lookup period yourself on the chart. Drag a desired period horizontally within the chart to select a dragged area and you can view the data of the selected period. You can select and focus on the section that shows an abnormal shape in the chart.
 
 ## User Group
-**Compute > System Monitoring > User Group** allows you to specify which of his monitored users will receive notifications when a specific event occurs. You can select members among project members and group users to different groups for easy management.
+**Monitoring > System Monitoring > User Group** allows you to specify which of his monitored users will receive notifications when a specific event occurs. You can select members among project members and group users to different groups for easy management.
 
 If there is no user group, an empty screen will appear when you look up the user group for the first time. To receive notification from System Monitoring, add a user group as guided on the screen.
 
 ### Create User Group
-To create a user group, go to **Compute > System Monitoring > User Group** and then click the **Create Group** button.
+To create a user group, go to **Monitoring > System Monitoring > User Group** and then click the **Create Group** button.
 
 Enter the name in the **Create Group** window and then click the **Create** button to create a new user group. And you are automatically moved to the next step to add project members to the user group.
 
 The list of users who belong to the current project is displayed at the bottom of the **Edit User Group** window. Click the **Add** button next to each user name in the user list to add users to the user group. You can set to send a notification to the users in the user group from the Notify Group to be linked later.
 
-After creating the user group, you can look up the user group list from **Compute > System Monitoring > User Group**.
+After creating the user group, you can look up the user group list from **Monitoring > System Monitoring > User Group**.
 
 ### Modify User Group
 To modify the created user group, click the **Edit** button from the user list group. Click the **Edit** button to display the **Edit User Group** window. In the same way you created a user group, you can modify the members of your user group.
@@ -81,7 +81,7 @@ To modify the created user group, click the **Edit** button from the user list g
 To modify the user group name, click the pencil icon on the right side of the user group name.
 
 ## Notify Group
-You can manage the Notify Group at **Compute > System Monitoring > Notify Group**. Tow roles of the Notify Group are as follows:
+You can manage the Notify Group at **Monitoring > System Monitoring > Notify Group**. Tow roles of the Notify Group are as follows:
 - Sets the threshold to each system metric. In System Monitoring, **monitoring setting** refers to setting threshold to the system metric. When the selected system metric reaches the threshold, a notification is sent to the specified user group.
 - You can link the created monitoring setting with the monitoring target server and then link with the user group to receive the notification. Actually, the Notify Group plays a role in connecting the server dashboard and user group.
 
@@ -164,10 +164,10 @@ Connect the monitoring target server to apply the monitoring setting defined abo
 
 At the top, specify the server to apply the monitoring setting specified in the corresponding Notify Group. At the bottom, specify the user group which will receive a notification when the monitoring conditions are met. To deselect, click the **X** button on the right side of the server or user group name or select again from the dropdown menu to deselect.
 
-Now you can look up the Notify Group list from **Compute > System Monitoring > Notify Group**.
+Now you can look up the Notify Group list from **Monitoring > System Monitoring > Notify Group**.
 
 ## Monthly Metrics Report
-You can find monthly metrics reports from **Compute > System Monitoring > Monthly Metrics Report**.
+You can find monthly metrics reports from **Monitoring > System Monitoring > Monthly Metrics Report**.
 
 ### GENERAL Report Type
 * Monthly metrics report is created based on **Server Dashboard**.
