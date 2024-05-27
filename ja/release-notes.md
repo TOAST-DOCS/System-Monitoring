@@ -1,4 +1,4 @@
-## Monitoring > System Monitoring > 릴리즈 노트
+## Monitoring > System Monitoring > リリースノート
 
 ## 2024. 05. 28.
 ### 機能改善/変更

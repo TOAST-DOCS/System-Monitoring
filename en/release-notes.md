@@ -1,4 +1,4 @@
-## Monitoring > System Monitoring > 릴리즈 노트
+## Monitoring > System Monitoring > Release Notes
 
 ## 2024. 05. 28.
 ### Feature Updates
