@@ -1,6 +1,6 @@
-## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > 콘솔 사용 가이드
+## Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics) > 콘솔 사용 가이드
 콘솔 사용 가이드에서는 Advanced Monitoring(OpenMetrics)을 사용하는 데 필요한 내용을 설명합니다.
-**Compute > System Monitoring > OpenMetrics 대시보드**에서는 모니터링 작업 공간을 정의하고 수집 대상을 지정하여 Exporter 또는 그 형식을 따르는 임의의 지표를 수집할 수 있습니다.
+**Monitoring > System Monitoring > OpenMetrics 대시보드**에서는 모니터링 작업 공간을 정의하고 수집 대상을 지정하여 Exporter 또는 그 형식을 따르는 임의의 지표를 수집할 수 있습니다.
 수집된 지표는 서버 대시보드와 유사한 방식으로 레이아웃과 차트를 구성하여 확인할 수 있습니다.
 
 ## 작업 공간
@@ -62,7 +62,7 @@ http://localhost:8080/actuator/prometheus | `/actuator/prometheus`
 회색 | 수집 준비 중(수집 대상 등록 직후 또는 인스턴스가 중지된 상태)
 
 > 시간이 지나도 회색 상태가 유지되면 Agent를 최신 버전으로 업데이트해 주시기 바랍니다.
-> ([Agent 설치 방법](https://docs.toast.com/ko/Compute/System%20Monitoring/ko/console-guide/#agent))
+> ([Agent 설치 방법](https://docs.toast.com/ko/Monitoring/System%20Monitoring/ko/console-guide/#agent))
 > 업데이트 이후에도 여전히 변화가 없다면 고객센터로 문의하시길 바랍니다.
 
 ### 수집 대상 삭제

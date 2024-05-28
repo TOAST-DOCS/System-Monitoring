@@ -1,11 +1,11 @@
-## Compute > System Monitoring > 概要
-**Compute > System Monitoring**サービスでは、**Instance**でユーザーが作成したインスタンスに対するモニタリング機能を提供します。
+## Monitoring > System Monitoring > 概要
+**Monitoring > System Monitoring**サービスでは、**Instance**でユーザーが作成したインスタンスに対するモニタリング機能を提供します。
 インスタンスのシステムリソース状態をチャート形式で視覚化して表示でき、使用量のしきい値を設定して、特定状態の通知をメールまたはSMSで受信できます。
 
 System Monitoringは、各インスタンスにインストールされたSystem Monitoring Agentでシステム指標を収集します。 
 基本的にAgentはインスタンスのイメージに含まれているため、インスタンス起動時に自動的に収集を始めます。
 しかし、System Monitoringサービスがリリースされた2019年7月23日より前に作成され動作しているインスタンスの場合は、別途Agentをインストールする必要があります。
-Agentのインストール方法は、**Compute > System Monitoring > コンソールガイド > Agentインストール方法**を参照してください。
+Agentのインストール方法は、**Monitoring > System Monitoring > コンソールガイド > Agentインストール方法**を参照してください。
 
 ## 提供機能
 ### システムの状況をチャートで閲覧できるダッシュボード

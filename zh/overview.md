@@ -1,11 +1,11 @@
-## Compute > System Monitoring > 概要
-**Compute > System Monitoring**服务提供针对用户在**Instance**中创建的实例的监控功能。
+## Monitoring > System Monitoring > 概要
+**Monitoring > System Monitoring**服务提供针对用户在**Instance**中创建的实例的监控功能。
 可以通过视觉化的图表形式视觉化查看实例的系统源状态，也可通过设置使用量临界值，以邮件或SMS接收特定状态的警报。
 
 System Monitoring通过各实例服务器中安装的System Monitoring Agent收集系统指标。 
 Agent默认包含在实例的映射中，因此实例驱动时自动开始收集。
 但对于在推出System Monitoring服务的2019年7月23日之前创建且在运行中的实例，需要另行安装Agent。
-Agent安装方法请参考**Compute > System Monitoring > 控制台指南 > Agent安装方法**。
+Agent安装方法请参考**Monitoring > System Monitoring > 控制台指南 > Agent安装方法**。
 
 ## 提供功能
 ### 提供系统指标仪表板

@@ -1,6 +1,6 @@
-## Compute > System Monitoring > Advanced Monitoring(OpenMetrics) > コンソール使用ガイド
+## Monitoring > System Monitoring > Advanced Monitoring(OpenMetrics) > コンソール使用ガイド
 コンソール使用ガイドではAdvanced Monitoring(OpenMetrics)を使用するのに必要な内容を説明します。
-**Compute > System Monitoring > OpenMetricsダッシュボード**ではモニタリングワークスペースを定義し、収集対象を指定してExporterまたはその形式に応じた任意の指標を収集できます。
+**Monitoring > System Monitoring > OpenMetricsダッシュボード**ではモニタリングワークスペースを定義し、収集対象を指定してExporterまたはその形式に応じた任意の指標を収集できます。
 収集された指標はサーバーダッシュボードと類似した方式でレイアウトとチャートを構成して確認できます。
 
 ## ワークスペース
@@ -56,7 +56,7 @@ http://localhost:8080/actuator/prometheus | `/actuator/prometheus`
 灰色 | 収集準備中(収集対象登録直後またはインスタンスが停止した状態)
 
 > もし時間が経っても灰色の状態が続く場合は、Agentを最新バージョンにアップデートしてください。
-([Agentインストール方法](https://docs.toast.com/ja/Compute/System%20Monitoring/ja/console-guide/#agent))
+([Agentインストール方法](https://docs.toast.com/ja/Monitoring/System%20Monitoring/ja/console-guide/#agent))
 アップデート後も変化がない場合はサポートへお問い合わせください。
 
 ### 収集対象の削除

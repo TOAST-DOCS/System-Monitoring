@@ -1,11 +1,11 @@
-## Compute > System Monitoring > 개요
-**Compute > System Monitoring** 서비스에서는 **Instance**에서 사용자가 생성한 인스턴스에 대한 모니터링 기능을 제공합니다.
+## Monitoring > System Monitoring > 개요
+**Monitoring > System Monitoring** 서비스에서는 **Instance**에서 사용자가 생성한 인스턴스에 대한 모니터링 기능을 제공합니다.
 인스턴스의 시스템 리소스 상태를 차트 형태로 시각화해서 볼 수 있으며, 사용량 임계치를 설정해 특정 상태의 알림을 이메일 또는 SMS로 받을 수 있습니다.
 
 System Monitoring은 각 인스턴스 서버에 설치된 System Monitoring Agent로 시스템 지표를 수집합니다. 
 기본적으로 Agent는 인스턴스의 이미지에 포함되어있기 때문에 인스턴스 구동시 자동으로 수집을 시작합니다.
 하지만 System Monitoring 서비스가 출시된 2019년 7월 23일 이전에 생성되어 동작 중인 인스턴스의 경우 별도의 Agent 설치가 필요합니다.
-Agent 설치 방법은 **Compute > System Monitoring > 콘솔 가이드 > Agent 설치 방법**을 참고하시기 바랍니다.
+Agent 설치 방법은 **Monitoring > System Monitoring > 콘솔 가이드 > Agent 설치 방법**을 참고하시기 바랍니다.
 
 ## 제공 기능
 ### 시스템 지표 대시보드 제공
