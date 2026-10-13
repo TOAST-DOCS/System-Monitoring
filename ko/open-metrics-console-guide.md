@@ -62,7 +62,7 @@ http://localhost:8080/actuator/prometheus | `/actuator/prometheus`
 회색 | 수집 준비 중(수집 대상 등록 직후 또는 인스턴스가 중지된 상태)
 
 > 시간이 지나도 회색 상태가 유지되면 Agent를 최신 버전으로 업데이트해 주시기 바랍니다.
-> ([Agent 설치 방법](https://docs.toast.com/ko/Monitoring/System%20Monitoring/ko/console-guide/#agent))
+> ([Agent 설치 방법](https://docs.nhncloud.com/ko/Monitoring/System%20Monitoring/ko/console-guide/#agent))
 > 업데이트 이후에도 여전히 변화가 없다면 고객센터로 문의하시길 바랍니다.
 
 ### 수집 대상 삭제

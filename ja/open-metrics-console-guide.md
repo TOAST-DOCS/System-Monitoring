@@ -56,7 +56,7 @@ http://localhost:8080/actuator/prometheus | `/actuator/prometheus`
 灰色 | 収集準備中(収集対象登録直後またはインスタンスが停止した状態)
 
 > もし時間が経っても灰色の状態が続く場合は、Agentを最新バージョンにアップデートしてください。
-([Agentインストール方法](https://docs.toast.com/ja/Monitoring/System%20Monitoring/ja/console-guide/#agent))
+([Agentインストール方法](https://docs.nhncloud.com/ja/Monitoring/System%20Monitoring/ja/console-guide/#agent))
 アップデート後も変化がない場合はサポートへお問い合わせください。
 
 ### 収集対象の削除

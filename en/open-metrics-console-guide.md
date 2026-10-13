@@ -63,7 +63,7 @@ Status value is distinguished by color. For all collections except normal collec
 | Grey   | Preparing collection (right after collection targets are registered or the instance is stopped) |
 
 > If the grey color does not change even after a while, please update the Agent with the latest version.
-> ([How to install the Agent](https://docs.toast.com/en/Monitoring/System%20Monitoring/en/console-guide/#agent))
+> ([How to install the Agent](https://docs.nhncloud.com/en/Monitoring/System%20Monitoring/en/console-guide/#agent))
 > If there is no change even after updating, please contact our Customer Center.
 
 ### Delete Collection Target
